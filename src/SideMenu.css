@@ -1,0 +1,67 @@
+.css-dip3t8{
+    background: #222222 !important;
+    height: auto !important;
+}
+
+.css-1wvake5{
+    border-right-style: none !important;
+}
+
+.css-1wvake5.ps-collapsed{
+    width: 0 !important;
+    min-width: 0 !important;
+}
+
+
+.css-1t8x7v1 >.ps-menu-button,
+.css-16jesut >.ps-menu-button,
+.css-1tqrhto >.ps-menu-button{
+    padding: 20px;
+    height: auto !important;
+}
+
+
+.css-ewdv3l{
+    background: #222222 !important;
+}
+
+.side_menu_wrap h2{
+    font-size: 20px;
+    font-weight: 600 !important;
+}
+
+
+
+.h2{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+.h2:hover ul>li{
+    color: #222222;
+}
+
+
+
+.side_menu_wrap li:hover{
+    background: #222222 !important;
+}
+
+.css-1t8x7v1 >.ps-menu-button:hover{
+    background: #222222 !important;
+   
+}
+
+.css-16jesut >.ps-menu-button:hover{
+    background: #222222 !important;
+}
+
+.css-1tqrhto >.ps-menu-button:hover{
+    background: #222222 !important;
+    
+} 
+
+.css-1tqrhto >.ps-menu-button:hover span{
+    color: #fefefe !important;
+}
