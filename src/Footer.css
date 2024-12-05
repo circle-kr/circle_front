@@ -1,6 +1,7 @@
 .footer_wrap{
-    text-align: center;
     border-top: 1px solid #fefefe;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .footer_cont{

@@ -21,7 +21,6 @@ function Footer() {
                             <p>© 2024 Circle. All rights reserved.</p>
                         </div>
                     </address>
-                    
                 </div>
             </div>
         </footer>

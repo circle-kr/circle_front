@@ -11,7 +11,7 @@ function Header({sidemenuToggle}) {
                     <Link to='/'><h1>Circle</h1></Link>
                     <Link to="./SignIn">
                         <div className='sign_in_btn'>
-                            Sign in
+                            Sign in 
                         </div>
                     </Link>
                 </div>

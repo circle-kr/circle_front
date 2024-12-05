@@ -24,11 +24,11 @@ button{
 }
 
 .sign_in_btn{
-    font-weight: bold;
     padding: 7px 20px;
     box-sizing: border-box;
     border: 1px solid #FEFEFE;
     border-radius: 50px;
+    font-weight: bold;
     transition: all 0.3s;
 }
 
