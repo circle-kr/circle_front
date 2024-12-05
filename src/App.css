@@ -1,0 +1,47 @@
+body,html,h1,h2,h3,h4,ul,li,dl,dt,dd,img,address{
+  font-family: "Montserrat", "Pretendard Variable";
+  margin: 0;
+  padding: 0;
+}
+
+body,html{
+  background: #222222;
+  color: #FEFEFE;
+}
+
+ul,li,dl,dt,dd{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+img{
+  border: none;
+}
+
+address{
+  font-style: normal;
+}
+
+h2{
+  font-size: 40px;
+}
+
+h3{
+  font-size: 32px;
+}
+
+p{font-size: 20px;}
+
+.container{
+  width: 100%;
+  display: flex;
+}
+
+main{
+  width: 1280px;
+  margin: 0 auto;
+}
