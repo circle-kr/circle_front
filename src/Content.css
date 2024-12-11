@@ -85,7 +85,7 @@ h4{
 
 .popular_circle_cont>div>div{
     padding: 20px;
-    width: 23%;
+    width: 24%;
     box-sizing: border-box;
     border-radius: 20px;
     background: #808080;
@@ -160,8 +160,12 @@ h4{
     justify-content: space-between;
 }
 
+.join_circle_main section>div{
+    padding: 0 !important;
+}
+
 .all_circle_cont>div>div{
-    width: 305px;
+    width: 24%;
     padding: 20px;
     box-sizing: border-box;
     height: 146px;
