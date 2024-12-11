@@ -26,6 +26,7 @@ section>div{
 
 .join_circle_wrap>h2{
     margin-bottom: 30px;
+    font-size: 32px;
 }
 
 .join_circle_wrap>h2>img{
@@ -93,6 +94,7 @@ section>div{
 section>div>h3{
     display: flex;
     align-items: center;
+    font-size: 28px;
 }
 
 section>div>h3>img{

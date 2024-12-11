@@ -45,7 +45,6 @@ function JoinCircle() {
                 </section>
                 <section className='schedule'>
                     <div className='schedule_cont'>
-                        
                     </div>
                 </section>
             </div>
