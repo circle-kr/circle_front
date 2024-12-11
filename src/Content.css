@@ -63,15 +63,16 @@
     margin-bottom: 30px;
 }
 
-h3{
+.popular_circle_field h3,.all_circle_field h3{
     font-size: 20px;
     font-weight: 600;
+    padding: 10px 0;
+    box-sizing: border-box;
 }
 
-h4{
+.join_circle_main_wrap h4{
     font-size: 18px;
     height: 22px;
-    background: #c1c1c1;
 }
 
 .popular_circle_cont{
@@ -88,18 +89,19 @@ h4{
     width: 24%;
     box-sizing: border-box;
     border-radius: 20px;
-    background: #808080;
     color: #222222;
     position: relative;
 }
 
-.popular_circle_cont>div>div>p{
-    font-size: 16px;
-    height: 20px;
-    background: #c1c1c1;
+.like_circle{
+    width: 20px;
 }
 
-.popular_circle_cont>div>div>span{
+.popular_circle_cont>div>div>p{
+    height: 20px;
+}
+
+.like_circle img{
     position: absolute;
     top: 20px;
     right: 20px;
@@ -107,13 +109,12 @@ h4{
 
 .circle_intro{
     margin: 10px 0 !important;
+    font-size: 16px;
 }
 
 .people_num img{
-    width: 30px;
-    margin-right: 10px;
-    height: 30px;
-    background: #c1c1c1;
+    width: 24px;
+    margin: 0 10px 0 0;
 }
 
 .popular_circle_cont>div:nth-child(odd){
@@ -139,7 +140,8 @@ h4{
 .people_num{
     display: flex;
     align-items: center;
-    font-size: 12px;
+    font-size: 14px;
+    margin: 0 0 20px;
 }
 
 .all_circle_field{
@@ -170,7 +172,6 @@ h4{
     box-sizing: border-box;
     height: 146px;
     border-radius: 20px;
-    background: #808080;
     position: relative;
     color: #222222;
 }
@@ -178,7 +179,6 @@ h4{
 .all_circle_cont>div>div>p{
     font-size: 16px;
     height: 20px;
-    background: #c1c1c1;
 }
 
 .all_circle_cont>div>div>span{

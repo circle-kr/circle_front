@@ -36,28 +36,28 @@ function Content() {
                     <div className='popular_circle_cont'>
                         <div className='popular_row_01'>
                             <div>
-                                <h4></h4>
-                                <p className='circle_intro'></p>
-                                <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <span>♡</span>
+                                <h4>Enhypen</h4>
+                                <p className='circle_intro'>7명의 뱀파이어 소년들</p>
+                                <p className='people_num'><img src= {peopleIcon} alt="인원수" />7 / 7</p>
+                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
                             </div>
                             <div>
                                 <h4></h4>
                                 <p className='circle_intro'></p>
                                 <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <span>♡</span>
+                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
                             </div>
                             <div>
                                 <h4></h4>
                                 <p className='circle_intro'></p>
                                 <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <span><img src={favoriteStrokeIcon} alt="찜하기" className='like_circle'/></span>
+                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
                             </div>
                             <div>
                                 <h4></h4>
                                 <p className='circle_intro'></p>
                                 <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <span>♡</span>
+                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
                             </div>
                         </div>
 
@@ -66,25 +66,25 @@ function Content() {
                                 <h4></h4>
                                 <p className='circle_intro'></p>
                                 <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <span>♡</span>
+                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
                             </div>
                             <div>
                                 <h4></h4>
                                 <p className='circle_intro'></p>
                                 <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <span>♡</span>
+                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
                             </div>
                             <div>
                                 <h4></h4>
                                 <p className='circle_intro'></p>
                                 <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <span>♡</span>
+                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
                             </div>
                             <div>
                                 <h4></h4>
                                 <p className='circle_intro'></p>
                                 <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <span>♡</span>
+                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
                             </div>
                         </div>
                     </div>
@@ -101,25 +101,25 @@ function Content() {
                                 <h4></h4>
                                 <p className='circle_intro'></p>
                                 <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <span>♡</span>
+                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
                             </div>
                             <div>
                                 <h4></h4>
                                 <p className='circle_intro'></p>
                                 <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <span>♡</span>
+                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
                             </div>
                             <div>
                                 <h4></h4>
                                 <p className='circle_intro'></p>
                                 <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <span>♡</span>
+                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
                             </div>
                             <div>
                                 <h4></h4>
                                 <p className='circle_intro'></p>
                                 <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <span>♡</span>
+                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
                             </div>
                         </div>
 
@@ -128,30 +128,29 @@ function Content() {
                                 <h4></h4>
                                 <p className='circle_intro'></p>
                                 <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <span>♡</span>
+                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
                             </div>
                             <div>
                                 <h4></h4>
                                 <p className='circle_intro'></p>
                                 <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <span>♡</span>
+                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
                             </div>
                             <div>
                                 <h4></h4>
                                 <p className='circle_intro'></p>
                                 <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <span>♡</span>
+                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
                             </div>
                             <div>
                                 <h4></h4>
                                 <p className='circle_intro'></p>
                                 <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <span>♡</span>
+                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
                             </div>
                         </div>
                     </div>
                 </section>
-
             </div>
         </div>
     </main>
