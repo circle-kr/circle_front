@@ -90,6 +90,13 @@
     border-radius: 30px;
     border: 1px solid #BEBEBE;
     color: #888888;
+    -o-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(./images/keyboard_arrow_down_icon.svg) center right 10px no-repeat;
+    background-size: 20px;
+    outline: 0 none;
 }
 
 .profile_bottom_03 span{

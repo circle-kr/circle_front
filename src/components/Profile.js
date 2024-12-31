@@ -3,7 +3,7 @@ import '../Profile.css'
 import cameraIcon from '../images/camera_icon.svg'
 import editIcon from '../images/edit_icon.svg'
 import saveIcon from '../images/save_icon.svg'
-import arrowBottomIcon from '../images/keyboard_arrow_down_icon.svg'
+
 
 function Profile() {
     return(
