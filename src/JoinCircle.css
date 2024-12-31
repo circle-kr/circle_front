@@ -1,0 +1,127 @@
+.sub_main{
+    padding: 40px 40px 80px;
+    box-sizing: border-box;
+}
+
+.join_circle_wrap{
+    position: relative;
+}
+
+.join_circle_wrap>div{
+    display: flex;
+    margin-bottom: 40px;
+    color: #222222;
+    border-radius: 30px;
+}
+
+section{
+    border-radius: 30px;
+}
+
+section>div{
+    padding: 30px;
+    box-sizing: border-box;
+    color: #222222;
+}
+
+.join_circle_wrap>h2{
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.join_circle_wrap>h2>img{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.join_circle_cont1{
+    align-items: center;
+}
+
+.intro{
+    width: 60%;
+    height: 260px;
+    border-radius: 30px;
+    background: #796BD8;
+    margin-right: 40px;
+}
+
+.btn_wrap{
+    width: 38%;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.btn_wrap button{
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    box-sizing: border-box;
+    background: #000000;
+    border: 2px solid #fefefe;
+    border-radius: 50px;
+    color: #fefefe;
+    font-size: 28px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn_wrap button:hover{
+    background: #fefefe;
+    color: #000;
+}
+
+.btn_wrap .join_btn{
+    margin-bottom: 40px;
+}
+
+.btn_wrap .join_btn span{
+    margin-left: 10px;
+}
+
+.btn_wrap .inquiry_btn span{
+    margin-left: 20px;
+}
+
+.community_preview{
+    background: #B87EEE;
+    width: 60%;
+    height: 470px;
+    margin-right: 40px;
+}
+
+.join_circle_wrap section>div h3{
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+}
+
+section>div>h3>img{
+    margin-right: 10px;
+}
+
+.activity{
+    width: 38%;
+    height: 470px;
+    background: #F9F9F9;
+}
+
+.jc_notification{
+    background: #D0FD5E;
+    height: 300px;
+    width: 60%;
+    margin-right: 40px;
+}
+
+.schedule{
+    width: 38%;
+    background: #F9F9F9;
+    height: 300px;
+}
+
+.people{
+    width: 100%;
+    background: #F9F9F9;
+    height: 810px;
+}

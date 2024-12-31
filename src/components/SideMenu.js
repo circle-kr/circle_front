@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import { Link } from 'react-router-dom';
 import '../SideMenu.css'
@@ -47,32 +47,9 @@ function SideMenu({collapsed}) {
                 >
               <h2>· Profile</h2>
             </MenuItem>
-
-
-
           </Menu>
         </Sidebar>
       </div>
-           /* <div className='side_menu_wrap' style={{ display : isOpen? "block" : "none" }}>
-            <nav>
-                <div className='gnb'>
-                    <ul>
-                        <li><Link to="./JoinCircle">· Join circle</Link></li>
-                        <li><Link to="./MakeCircle">· Make circle</Link></li>
-                        <li>
-                            <Link to="./JoinedCircle">· Joined circle</Link>
-                            <ul className='joined_menu'>
-                                <li>- circle</li>
-                                <li>- circle</li>
-                            </ul>
-                        </li>
-                        <li><Link to="./Notification">· Notification</Link></li>
-                        <li><Link to="./Chat">· Chat</Link></li>
-                        <li><Link to="./Profile">· Profile</Link></li>
-                    </ul>
-                </div>
-            </nav>
-        </div> */
     )
 }
 export default SideMenu;
