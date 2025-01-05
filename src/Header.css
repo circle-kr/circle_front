@@ -17,13 +17,13 @@ h1{
     font-size: 24px;
 }
 
-button{
+.header_cont .hambuger_menu{
     background: none;
     border: none;
     cursor: pointer;
 }
 
-.sign_in_btn{
+.header_cont .sign_in_btn{
     font-weight: bold;
     padding: 7px 20px;
     box-sizing: border-box;
@@ -32,7 +32,7 @@ button{
     transition: all 0.3s;
 }
 
-.sign_in_btn:hover{
+.header_cont .sign_in_btn:hover{
     background: #FEFEFE;
     color: #222222;
 }
