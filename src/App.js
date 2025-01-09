@@ -16,6 +16,7 @@ import Profile from './components/Profile'
 import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
 
+
 function App() {
     const [collapsed, setCollapsed] = useState(false); // 열고 닫힘 상태
     const toggleSidebar = () => {
