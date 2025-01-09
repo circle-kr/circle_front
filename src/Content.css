@@ -46,15 +46,68 @@
     height: 200px;
     background: #808080;
     margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.main_image_wrap .main_filter{
+    background: #444444;
+    opacity: 70%;
+    z-index: 3;
+    width: 100%;
+    height: 200px;
+    position: absolute;
+}
+
+.main_image_wrap .logo_meaning{
+    z-index: 5;
 }
 
 .category_wrap{
-    height: 98px;
-    background: #808080;
     margin-bottom: 30px;
 }
 
-.popular_circle_field{
+.category_top{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.category_bottom{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.category_wrap button{
+    padding: 13px 26px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    font-size: 20px;
+    color: #000;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.category_wrap>div>button:nth-child(4n+1){
+    background: #796BD8;
+}
+
+.category_wrap>div>button:nth-child(4n+2){
+    background: #D0FD5E;
+}
+
+.category_wrap>div>button:nth-child(4n+3){
+    background: #F9F9F9;
+}
+
+.category_wrap>div>button:nth-child(4n+4){
+    background: #B87EEE;
+}
+
+.main_circle_field{
     padding: 10px;
     box-sizing: border-box;
     border: 1px solid #E9E9E9;
@@ -63,7 +116,7 @@
     margin-bottom: 30px;
 }
 
-.popular_circle_field h3,.all_circle_field h3{
+.main_circle_field h3,.all_circle_field h3{
     font-size: 20px;
     font-weight: 600;
     padding: 10px 0;
@@ -75,16 +128,16 @@
     height: 22px;
 }
 
-.popular_circle_cont{
+.main_circle_cont{
     margin-bottom: 30px;
 }
 
-.popular_circle_cont>div{
+.main_circle_cont>div{
     display: flex;
     justify-content: space-between;
 }
 
-.popular_circle_cont>div>div{
+.main_circle_cont>div>div{
     padding: 20px;
     width: 24%;
     box-sizing: border-box;
@@ -95,16 +148,16 @@
 
 .like_circle{
     width: 20px;
-}
-
-.popular_circle_cont>div>div>p{
-    height: 20px;
-}
-
-.like_circle img{
+    border: none;
+    background: none;
     position: absolute;
     top: 20px;
     right: 20px;
+    cursor: pointer;
+}
+
+.main_circle_cont>div>div>p{
+    height: 20px;
 }
 
 .circle_intro{
@@ -117,24 +170,40 @@
     margin: 0 10px 0 0;
 }
 
-.popular_circle_cont>div:nth-child(odd){
+.main_circle_cont>div:nth-child(odd){
     margin-bottom: 20px;
 }
 
-.popular_circle_cont>div>div:nth-child(4n+1){
+.main_circle_cont>div:nth-child(odd)>div:nth-child(4n+1){
     background: #B87EEE;
 }
 
-.popular_circle_cont>div>div:nth-child(4n+2){
+.main_circle_cont>div:nth-child(odd)>div:nth-child(4n+2){
     background: #796BD8;
 }
 
-.popular_circle_cont>div>div:nth-child(4n+3){
+.main_circle_cont>div:nth-child(odd)>div:nth-child(4n+3){
+    background: #F9F9F9;
+}
+
+.main_circle_cont>div:nth-child(odd)>div:nth-child(4n+4){
     background: #D0FD5E;
 }
 
-.popular_circle_cont>div>div:nth-child(4n+4){
+.main_circle_cont>div:nth-child(even)>div:nth-child(4n+1){
     background: #F9F9F9;
+}
+
+.main_circle_cont>div:nth-child(even)>div:nth-child(4n+2){
+    background: #D0FD5E;
+}
+
+.main_circle_cont>div:nth-child(even)>div:nth-child(4n+3){
+    background: #B87EEE;
+}
+
+.main_circle_cont>div:nth-child(even)>div:nth-child(4n+4){
+    background: #796BD8;
 }
 
 .people_num{
@@ -191,18 +260,38 @@
     margin-bottom: 20px;
 }
 
-.all_circle_cont>div>div:nth-child(4n+1){
-    background: #D0FD5E;
-}
-
-.all_circle_cont>div>div:nth-child(4n+2){
-    background: #F9F9F9;
-}
-
-.all_circle_cont>div>div:nth-child(4n+3){
+.all_circle_cont>div:nth-child(odd)>div:nth-child(4n+1){
     background: #B87EEE;
 }
 
-.all_circle_cont>div>div:nth-child(4n+4){
+.all_circle_cont>div:nth-child(odd)>div:nth-child(4n+2){
     background: #796BD8;
+}
+
+.all_circle_cont>div:nth-child(odd)>div:nth-child(4n+3){
+    background: #F9F9F9;
+}
+
+.all_circle_cont>div:nth-child(odd)>div:nth-child(4n+4){
+    background: #D0FD5E;
+}
+
+.all_circle_cont>div:nth-child(even)>div:nth-child(4n+1){
+    background: #F9F9F9;
+}
+
+.all_circle_cont>div:nth-child(even)>div:nth-child(4n+2){
+    background: #D0FD5E;
+}
+
+.all_circle_cont>div:nth-child(even)>div:nth-child(4n+3){
+    background: #B87EEE;
+}
+
+.all_circle_cont>div:nth-child(even)>div:nth-child(4n+4){
+    background: #796BD8;
+}
+
+.category_wrap .active{
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
