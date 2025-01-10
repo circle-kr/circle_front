@@ -27,6 +27,12 @@ address{
   font-style: normal;
 }
 
+button{
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
 h2{
   font-size: 40px;
 }
