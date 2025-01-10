@@ -1,0 +1,127 @@
+.side_menu_wrap{
+    margin-right: 20px;
+    position: relative;
+}
+
+.css-dip3t8{
+    background: #222222 !important;
+    height: auto !important;
+    position: static !important;
+}
+
+.css-1wvake5{
+    border-right-style: none !important;
+}
+
+.css-1wvake5.ps-collapsed{
+    width: 0 !important;
+    min-width: 0 !important;
+}
+
+.css-1wvake5.ps-collapsed .css-1khxlch{
+    opacity: 0;
+}
+
+.css-1t8x7v1 >.ps-menu-button,
+.css-16jesut >.ps-menu-button,
+.css-1tqrhto >.ps-menu-button{
+    padding: 20px;
+    height: auto !important;
+}
+
+.css-ewdv3l{
+    background: #222222 !important;
+}
+
+.side_menu_wrap h2{
+    font-size: 20px;
+    font-weight: 600 !important;
+}
+
+.h2{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.h2:hover ul>li{
+    color: #222222;
+}
+
+.css-16jesut:hover li>a{
+    color: #fefefe !important;
+}
+
+
+.css-1t8x7v1 >.ps-menu-button:hover{
+    background: #222222 !important;
+    font-weight: bold !important;
+}
+
+.css-16jesut >.ps-menu-button:hover{
+    background: #222222 !important;
+}
+
+.css-1tqrhto >.ps-menu-button:hover{
+    background: #222222 !important;
+    
+} 
+
+.css-1tqrhto >.ps-menu-button:hover span{
+    color: #fefefe !important;
+}
+
+.css-dip3t8 ul>li>a{
+    transition: all 0.1s;
+}
+
+.css-dip3t8 ul>li>a:hover{
+    font-weight: bold !important;
+}
+  
+.side_menu_wrap h2{
+    transition: all 0.1s;
+}
+
+.side_menu_wrap h2:hover{
+    font-weight: bold !important;
+}
+
+.like_circle_list_wrap{
+    background: #fefefe;
+    color: #000;
+    border-radius: 30px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 40px;
+}
+
+.like_circle_list_wrap h3{
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.like_circle_list_wrap h3>img{
+    margin-left: 48px;
+}
+
+.like_circle_list_wrap li{
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.like_circle_list_wrap li:first-child{
+    margin-top: 10px;
+}
+
+.like_circle_list_wrap li:last-child{
+    border-bottom: none;
+    padding-bottom: 0;
+}
+  
+  
