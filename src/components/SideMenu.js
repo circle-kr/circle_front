@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import { Link } from 'react-router-dom';
 import '../SideMenu.css'
+import arrowBottomIcon from '../images/keyboard_arrow_down_icon.svg' 
+import arrowRightIcon from '../images/keyboard_arrow_right_icon.svg'
 
 function SideMenu({collapsed}) {
+  const [listToggle,setListToggle] = useState(false);
+  const likeCircleToggle = () => {
+    setListToggle(!listToggle); 
+  }
     return(
-        <div style={{  height: "100vh" }}>
-        <Sidebar collapsed={collapsed} className='side_menu_wrap'>
+        <div className='side_menu_wrap'>
+        <Sidebar collapsed={collapsed} className='side_menu_cont'>
           <Menu>
             <MenuItem
               component={<Link to="/JoinCircle" className="join_circle" />}
@@ -48,8 +54,24 @@ function SideMenu({collapsed}) {
               <h2>· Profile</h2>
             </MenuItem>
           </Menu>
-        </Sidebar>
-      </div>
+
+          <div className='like_circle_list_wrap'>
+            <button onClick={likeCircleToggle}>
+              <h3>♥ like circle list <img src={arrowBottomIcon} alt="펼치기/접기" /></h3>
+            </button>
+              <ul className={`like_circle_list ${listToggle ? 'active' : ''}`}
+               style={{ display: listToggle? 'block' : 'none' }}>
+                <li>· 모임 1 <img src={arrowRightIcon} alt="이동하기" /></li>
+                <li>· 모임 2 <img src={arrowRightIcon} alt="이동하기" /></li>
+                <li>· 모임 3 <img src={arrowRightIcon} alt="이동하기" /></li>
+              </ul>
+          </div>
+          
+        </Sidebar>      
+        
+        </div>
+
+        
     )
 }
 export default SideMenu;
