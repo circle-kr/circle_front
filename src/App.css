@@ -1,4 +1,5 @@
-body,html,h1,h2,h3,h4,ul,li,dl,dt,dd,img,address{
+
+body,html,h1,h2,h3,h4,ul,li,dl,dt,dd,img,address,button,input,textarea,select{
   font-family: "Montserrat", "Pretendard Variable";
   margin: 0;
   padding: 0;
@@ -24,6 +25,12 @@ img{
 
 address{
   font-style: normal;
+}
+
+button{
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
 h2{
