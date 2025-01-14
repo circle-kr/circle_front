@@ -13,7 +13,7 @@ function JoinedCircle() {
         setSelectedCircle(circle); // 클릭한 모임을 상태로 설정
     };
     return(
-    <main className='main'>
+    <main className='main sub_main'>
         <div className='joined_circle_wrap'>
             <h2></h2>
             <div className='joined_circle_cont'>
