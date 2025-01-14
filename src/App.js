@@ -7,8 +7,8 @@ import SideMenu from './components/SideMenu';
 import Footer from './components/Footer';
 import JoinCircle from './components/JoinCircle'
 import MakeCircle from './components/MakeCircle'
-import JoinedCircle from './components/JoinedCircle'
 import JoinedCircle01 from './components/JoinedCircle01'
+import JoinedCircle02 from './components/JoinedCircle02'
 import Notification from './components/Notification'
 import Chat from './components/Chat';
 import ChatMessage from './components/ChatMessage';
@@ -33,8 +33,8 @@ function App() {
             <Route path="/" element={<Content />} />
             <Route path="/Joincircle" element={<JoinCircle />} />
             <Route path="/MakeCircle" element={<MakeCircle />} />
-            <Route path="/JoinedCircle" element={<JoinedCircle />} />
             <Route path="/JoinedCircle01" element={<JoinedCircle01 />} />
+            <Route path="/JoinedCircle02" element={<JoinedCircle02 />} />
             <Route path="/Notification" element={<Notification />} />
             <Route path="/Chat" element={<Chat />} />
             <Route path="/ChatMessage" element={<ChatMessage />} />

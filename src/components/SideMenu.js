@@ -29,8 +29,8 @@ function SideMenu({collapsed}) {
             </MenuItem>
 
             <SubMenu className='h2' label="· JoinedCircle">
-            <MenuItem component={<Link to="/JoinedCircle" className="joined_circle" />}>- Timeline Chart </MenuItem>
-            <MenuItem>- Bubble Chart </MenuItem>
+            <MenuItem component={<Link to="/JoinedCircle01" className="joined_circle01" />}>- Timeline Chart </MenuItem>
+            <MenuItem component={<Link to="/JoinedCircle02" className="joined_circle02" />}>- Bubble Chart </MenuItem>
           </SubMenu>
 
           <MenuItem
