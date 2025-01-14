@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import JoinedCircle01 from './JoinedCircle01';
+import '../JoinedCircle.css'
+import JoinedCircle01 from '../components/JoinedCircle01'
 function JoinedCircle() {
     const [selectedCircle, setSelectedCircle] = useState(null);
   
@@ -15,7 +16,7 @@ function JoinedCircle() {
     return(
     <main className='main sub_main'>
         <div className='joined_circle_wrap'>
-            <h2></h2>
+            <h2>방구</h2>
             <div className='joined_circle_cont'>
             <ul>
                 {circles.map((circle) => (
