@@ -16,6 +16,7 @@ import ProfileInfo from './components/ProfileInfo'
 import Profile from './components/Profile'
 import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
+import Schedule from './components/Schedule'
 
 function App() {
   const [collapsed, setCollapsed] = useState(false); // 열고 닫힘 상태
@@ -42,6 +43,7 @@ function App() {
             <Route path="/Profile" element={<Profile />} />
             <Route path="/SignIn" element={<SignIn />} />
             <Route path="/SignUp" element={<SignUp />} />
+            <Route path="/Schedule" element={<Schedule />} />
           </Routes>
         </div>
         <Footer />

@@ -5,7 +5,7 @@
 
 .make_circle_cont{
     position: relative;
-    height: 2000px;
+    height: 2200px;
 }
 
 .make_circle_wrap h2{
@@ -94,7 +94,6 @@
 .mc_schedule{
     background: #f9f9f9;
     width: 100%;
-    height: 670px;
     position: absolute;
     top: 1110px;
     left: 0;

@@ -1,5 +1,6 @@
 import React from 'react'
-import '../makeCircle.css'
+import '../MakeCircle.css'
+import Schedule from './Schedule'; 
 
 function MakeCircle() {
     return(
@@ -9,7 +10,6 @@ function MakeCircle() {
             your circle !</h2>
             <div className='make_circle_cont'>
                 
-            
             <section className='make_circle_name'>
                 <div className='make_circle_name_cont'>
                     <form>
@@ -51,9 +51,7 @@ function MakeCircle() {
             </section>
 
             <section className='mc_schedule'>
-                <div className='make_circle_schedule_cont'> 
-                    스케줄 컴포넌트
-                </div>
+                <Schedule/>
             </section>
 
             <button className='mc_submit'>Submit <span>→</span></button>    
