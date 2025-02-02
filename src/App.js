@@ -17,6 +17,7 @@ import Profile from './components/Profile'
 import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
 import Schedule from './components/Schedule'
+import SchedulePopUp from './components/SchedulePopUp';
 
 function App() {
   const [collapsed, setCollapsed] = useState(false); // 열고 닫힘 상태
@@ -44,6 +45,7 @@ function App() {
             <Route path="/SignIn" element={<SignIn />} />
             <Route path="/SignUp" element={<SignUp />} />
             <Route path="/Schedule" element={<Schedule />} />
+            <Route path="/SchedulePopUp" element={<SchedulePopUp />} />
           </Routes>
         </div>
         <Footer />
