@@ -43,23 +43,14 @@ const Schedule: React.FC = () => {
     console.log("Cliquei no evento de: ", info.event);
   }
 
-  interface CustomEvent extends EventInput{
-    className? : string[];
-  }
 
-  const events: CustomEvent[] = [{
-    title: 'meeting',
-    start: '2024-02-05',
-    classNames: ['calendar_cont']
-  }
-]
+ 
 
   return (
     
     <div className="schedule_wrap">
       <>
       <FullCalendar
-      className = "calendar_cont"
         plugins={[dayGridPlugin, timeGridPlugin, momentTimezonePlugin, interactionPlugin]} // 플러그인 설정
         headerToolbar={{
           left: "prev,next today", // 이전달, 다음달, 오늘달
