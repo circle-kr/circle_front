@@ -19,5 +19,6 @@ declare module '@toast-ui/calendar' {
     export type EventObject = any;
     export type ExternalEventTypes = any;
     export type Options = any;
+    export type className = any;
 }
 

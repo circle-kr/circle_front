@@ -97,6 +97,7 @@
     position: absolute;
     top: 1110px;
     left: 0;
+    overflow: hidden;
 }
 
 .mc_submit{

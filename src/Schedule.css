@@ -95,8 +95,8 @@ tr,th{
 
 .schedule_wrap{
     position: relative;
-    overflow: hidden;
-    height: 720px;
+    /* overflow: hidden;
+    height: 720px; */
 }
 
 .schedule_popup{
