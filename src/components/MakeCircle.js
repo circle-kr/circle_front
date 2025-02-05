@@ -1,6 +1,6 @@
 import React from 'react'
 import '../MakeCircle.css'
-import Schedule from './Schedule';
+import Schedule from './Schedule'; 
 
 function MakeCircle() {
     return(

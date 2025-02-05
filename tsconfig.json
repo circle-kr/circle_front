@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "lib": ["dom", "esnext"],
+    "allowJs": false,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "jsx": "react-jsx",
+    "baseUrl": "./",
+    "paths": {
+      "@toast-ui/calendar": ["src/@types/@toast-ui/calendar"]
+    }
+  },
+  "include": [
+    "src",
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
