@@ -1,0 +1,80 @@
+.sub_main{
+    padding: 40px 40px 80px;
+    box-sizing: border-box;
+}
+
+.chat_message_wrap h2{
+    margin-bottom: 30px;
+    font-size: 32px;
+    color: #fefefe;
+}
+
+.chat_message_cont{
+    background: #fefefe;
+    height: auto;
+    border-radius: 30px;
+    padding: 40px;
+    box-sizing: border-box;
+    color: #222222;
+}
+
+.chat_message_top{
+    display: flex;
+    align-items: center;
+    padding: 10px 100px;
+}
+
+.chat_message_top p{
+    font-size: 24px;
+    margin: 0;
+}
+
+.chat_message_top .user_img{
+    width: 80px;
+    height: 80px;
+    background: #777777;
+    border-radius: 50px;
+    margin-right: 25px;
+}
+
+.chat_profile{
+    position: relative;
+}
+
+.chat_profile .user_name{
+    font-weight: bold;
+}
+
+.chat_profile .user_id{
+    color: #777777;
+}
+
+.chat_back_btn{
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}
+
+.time_line{
+    text-align: center;
+}
+
+.my_msg_box{
+    width: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #796BD8;
+    border-radius: 50px;
+    text-align: right;
+    position: relative;
+    display: inline-block;
+}
+
+.my_msg_box span{
+    position: absolute;
+    left: -80px;
+}
+
+.chat_message_middle{
+    text-align: right;
+}
