@@ -3,8 +3,9 @@ import '../JoinedCircle.css';
 import notificationIcon from '../images/notification_icon.svg'
 import feedIcon from '../images/feed_write_icon.svg'
 import editIcon from '../images/edit_icon.svg'
+import Schedule from './Schedule';
+
 function JoinedCircle01() {
-    
     return(
     <main className='main sub_main'>
         <div className='joined_circle_wrap'>
@@ -18,7 +19,7 @@ function JoinedCircle01() {
 
                 <section className="schedule">
                    <div className="schedule_cont">
-                       
+                       <Schedule />
                    </div>
                 </section>
 
