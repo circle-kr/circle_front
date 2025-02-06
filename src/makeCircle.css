@@ -21,11 +21,13 @@
 
 .make_circle_cont section{
     border-radius: 30px;
+    margin-bottom: 40px;
 }
 
 .make_circle_cont section>div{
     padding: 30px;
     box-sizing: border-box;
+    height: 100%;
 }
 
 .make_circle_wrap h3 span{
@@ -50,6 +52,28 @@
     color: #555555;
 }
 
+.logo_wrap{
+    position: absolute;
+    width: 284px;
+    height: 284px;
+}
+
+.logo_text{
+    animation: rotate_image 10s linear infinite;transform-origin: 50% 50%;
+}
+
+@keyframes rotate_image{
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.logo_star{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .make_circle_name{
     background: #796BD8;
     height: 195px;
@@ -62,29 +86,57 @@
 
 .category_of_circle{
     background: #f9f9f9;
-    height: 240px;
     position: absolute;
     right: 0;
-    top: 235px;
+    top: 10%;
     width: 60%;
+    height: auto;
+}
+
+.input_box div{
+    display: inline-block;
+}
+
+.input_box label{
+    padding: 7px 17px;
+    box-sizing: border-box;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 50px;
+    display: inline-block;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.input_box input{
+    display: none;
+}
+
+.input_box input:checked + label {
+    background: #000; 
+    color: #fefefe;
+  }
+
+.layout_middle{
+    position: absolute;
+    top: 25%;
 }
 
 .charateristic_of_circle{
     background: #f9f9f9;
-    height: 220px;
-    position: absolute;
-    left: 0;
-    top: 515px;
     width: 60%;
+    margin-bottom: 40px;
+    height: auto;
 }
 
 .mc_notification{
     background: #B87EEE;
-    height: 290px;
+    width: 38%;
+    height: 610px;
+    margin-bottom: 40px;
     position: absolute;
-    left: 0;
-    top: 775px;
-    width: 60%;
+    top: 0;
+    right: 0;
 }
 
 .introduce_of_circle input{
@@ -95,17 +147,15 @@
 .introduce_of_circle{
     background: #D0FD5E;
     height: 555px;
-    position: absolute;
-    right: 0;
-    top: 515px;
     width: 37%;
+    margin-bottom: 40px;
 }
 
 .mc_schedule{
     background: #f9f9f9;
     width: 100%;
     position: absolute;
-    top: 1110px;
+    top: 1010px;
     left: 0;
     color: #222222;
 }
