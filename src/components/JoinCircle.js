@@ -5,6 +5,7 @@ import communityPreviewIcon from '../images/visibility_icon.svg'
 import activityIcon from '../images/activity_icon.svg'
 import notificationIcon from '../images/notification_icon.svg'
 import peopleIcon from '../images/people_icon.svg'
+import Schedule from './Schedule'
 function JoinCircle() {
     return(
     <main className='main sub_main'>
@@ -45,6 +46,7 @@ function JoinCircle() {
                 </section>
                 <section className='schedule'>
                     <div className='schedule_cont'>
+                        <Schedule/>
                     </div>
                 </section>
             </div>

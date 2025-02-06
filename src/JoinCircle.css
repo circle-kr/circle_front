@@ -115,9 +115,10 @@ section>div>h3>img{
 }
 
 .schedule{
-    width: 38%;
+    /* width: 38%; */
     background: #F9F9F9;
     height: 300px;
+    overflow: hidden;
 }
 
 .people{

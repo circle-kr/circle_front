@@ -1,0 +1,184 @@
+tr,th{
+     height: 65px;
+     text-align: center;
+     padding: 20px;
+     box-sizing: border-box;
+}
+
+.fc-theme-standard .fc-scrollgrid{
+    border: none;
+}
+
+.fc-scrollgrid-sync-inner{
+    font-size: 18px;
+}
+
+.fc .fc-timegrid-slot{
+    font-size: 18px;
+    color: #888888;
+}
+
+.fc-event, .fc-event-dot{
+    background: none;
+    border: none;
+    padding: 10px;
+    box-sizing: border-box;
+    color: #000;
+}
+
+.fc-direction-ltr .fc-timegrid-col-events{
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.fc-timegrid-event-harness-inset .fc-timegrid-event, .fc-timegrid-event.fc-event-mirror, .fc-timegrid-more-link{
+    box-shadow: none;
+    margin: 0;
+}
+
+.fc-timegrid-event .fc-event-main{
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.fc-day-sun .fc-event-main{
+    background: #D9D9D9;
+}
+
+.fc-day-mon .fc-event-main{
+    background: #8D7EFF;
+}
+
+.fc-day-tue .fc-event-main{
+    background: #CFFF5E;
+}
+
+.fc-day-wed .fc-event-main{
+    background: #B87EEE;
+}
+
+.fc-day-thu .fc-event-main{
+    background: #8D7EFF;
+}
+
+.fc-day-fri .fc-event-main{
+    background: #CFFF5E;
+}
+
+.fc-day-sat .fc-event-main{
+    background: #D9D9D9;
+}
+
+.fc-timegrid-event .fc-event-time{
+    font-size: 14px;
+    color: #666666;
+}
+
+.fc-scrollgrid-sync-inner{
+    height: 100%;
+}
+
+.fc .fc-col-header-cell-cushion{
+    color: #999999;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fc-v-event .fc-event-title{
+    color: #222222;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.schedule_wrap{
+    position: relative;
+    /* overflow: hidden;
+    height: 720px; */
+}
+
+.schedule_popup{
+    width: 400px;
+    position: absolute;
+    z-index: 50;
+    top: 30px;
+    right: 30px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #ffffff;
+    border-radius: 20px;
+}
+
+.schedule_wrap .schedule_popup h3{
+    margin: 0;
+}
+
+.schedule_popup .close_btn{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.schedule_popup dt{
+    margin: 20px 0 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.schedule_popup dd{
+    margin: 10px 0;
+}
+
+.schedule_profile{
+    position: relative;
+}
+
+.schedule_profile ul{
+    display: flex;
+}
+
+.schedule_profile li{
+    background: #D9D9D9;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.schedule_profile .more_icon{
+    position: absolute;
+    top: 0;
+    right: 80px;
+    width: 40px;
+    height: 40px;
+}
+
+.schedule_profile .more_icon img{
+    width: 40px;
+    height: 40px;
+}
+
+.schedule_btn_wrap{
+    margin-top: 30px;
+    display: flex;
+}
+
+.schedule_btn_wrap button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 118px;
+    height: 38px;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    border-radius: 30px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+
+
+
