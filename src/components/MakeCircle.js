@@ -11,7 +11,7 @@ function MakeCircle() {
         "music", "book", "food", "baking"
       ];
 
-    const Charateristic = [
+    const charateristic = [
         "exciting","active","passtionate","sociable","friendly",
         "supportive","calm","cozy","creative","innovative",
     ]
@@ -30,7 +30,8 @@ function MakeCircle() {
                     <section className='make_circle_name'>
                         <div className='make_circle_name_cont'>
                             <h3>① Make circle name</h3>
-                            <label><textarea rows="1" placeholder='Enter 20 characters or less'></textarea></label>
+                            <textarea id='name' rows="1" placeholder='Enter 20 characters or less'></textarea>
+                            <label htmlFor='name'></label>
                         </div>
                     </section>  
 
@@ -51,10 +52,10 @@ function MakeCircle() {
                             <div className='charateristic_of_circle_cont'>
                                 <h3>③ Charateristic of circle <br/>
                                 <span>(multiple options available)</span></h3>
-                                {Charateristic.map(Charateristic => (
-                                <div key={Charateristic}>
-                                    <input type="checkbox" id={Charateristic} name="Charateristic" value={Charateristic} />
-                                    <label htmlFor={Charateristic}>{Charateristic}</label>
+                                {charateristic.map(charateristic => (
+                                <div key={charateristic}>
+                                    <input type="checkbox" id={charateristic} name="charateristic" value={charateristic} />
+                                    <label htmlFor={charateristic}>{charateristic}</label>
                                 </div>
                                 ))}
                             </div>
@@ -63,14 +64,16 @@ function MakeCircle() {
                         <section className='mc_notification'>
                             <div className='make_circle_notification_cont'>
                                 <h3>④ Notification</h3>
-                                <label><textarea rows="5" placeholder='Enter 200 characters or less'></textarea></label>
+                                <textarea id='notification' rows="5" placeholder='Enter 200 characters or less'></textarea>
+                                <label htmlFor='notification'></label>
                             </div>
                         </section>
 
                         <section className='introduce_of_circle'>
                             <div className='introduce_of_circle_cont'>
                                 <h3>⑤ Introduce of circle</h3>
-                                <label><textarea rows="16" placeholder='Enter 300 characters or less'></textarea></label>
+                                <textarea id='introduce' rows="16" placeholder='Enter 300 characters or less'></textarea>
+                                <label htmlFor='introduce'></label>
                             </div>
                         </section>
                     </div>
