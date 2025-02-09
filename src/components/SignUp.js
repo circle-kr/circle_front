@@ -16,36 +16,72 @@ function SignUp() {
   const [showPwd, setShowPwd] = useState(false);
   const Navigate = useNavigate()
 
-  const onSubmit = (data) => {
-    console.log(data);
-  };
-
   const pwd = watch("password"); // 비밀번호 값을 추적
 
   function togglePwdVisibility(){
     setShowPwd((prev) => !prev); 
   }
 
-  
-
   function SignInClick(){
     Navigate('../SignIn')
   }
 
+  const onSubmit = async (data) => {
+    try {
+      const response = await axios.post(
+        `http://localhost:8080/api/users`,
+        {
+          firstName: data.firstName,
+          lastName: data.lastName,
+          nickname: data.nickName,
+          email: data.email,
+          password: data.password
+        },
+        {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      );
+
+      console.log("Response:", response.data);
+  
+      if (response.status === 201) {
+        alert('회원가입 성공!');
+        Navigate('/SignIn'); // 회원가입 후 로그인 페이지로 이동
+      }
+    } catch (error) {
+      console.error('회원가입 오류:', error);
+      alert('회원가입에 실패했습니다.');
+      // 상세 오류 출력
+    if (error.response) {
+      console.error("응답 데이터:", error.response.data);
+      console.error("응답 상태:", error.response.status);
+      console.error("응답 헤더:", error.response.headers);
+    } else if (error.request) {
+      console.error("요청 데이터:", error.request);
+    } else {
+      console.error("에러 메시지:", error.message);
+    }
+    }
+  };
+
   const handleDuplicateCheck = async (field, value) => {
     try {
-      // 백엔드 API를 호출하여 중복 여부를 확인
-      const response = await axios.post('/api/check-duplicate', { [field]: value });
+      const response = await axios.post(
+        'http://localhost:8080/api/check-duplicate',
+        { [field]: value }
+      );
 
       if (response.data.isDuplicate) {
         setError(field, { type: 'manual', message: `${field} is already taken` });
         if (field === 'nickname') {
-          setNickNameIsDuplicate(true);  // 닉네임 중복
+          setNickNameIsDuplicate(true);
         } else if (field === 'email') {
-          setEmailIsDuplicate(true);  // 이메일 중복
+          setEmailIsDuplicate(true);
         }
       } else {
-        clearErrors(field); // 중복이 아니면 오류 제거
+        clearErrors(field);
         if (field === 'nickname') {
           setNickNameIsDuplicate(false);
         } else if (field === 'email') {
@@ -53,10 +89,11 @@ function SignUp() {
         }
       }
     } catch (error) {
-      console.error(error);
+      console.error('중복 확인 오류:', error);
       setError(field, { type: 'manual', message: 'Failed to check duplicate' });
     }
   };
+  
   return (
     <main className="main sub_main">
       <div className="sign_up_wrap">
@@ -123,7 +160,6 @@ function SignUp() {
                   },
                 })}
                 />
-                
                 <button className='duplicate_btn'
                  type="button"
                 onClick={() => handleDuplicateCheck('nickname', document.getElementById('nickname').value)}
