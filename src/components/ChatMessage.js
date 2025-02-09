@@ -16,14 +16,13 @@ function ChatMessage() {
     return(
         <main className='main sub_main'>
             <div className='chat_message_wrap'>
-            <h2>Chat</h2>
+            <h2><button onClick={chatBackClick} className='chat_back_btn'><img src={arrowBackIcon} alt="뒤로가기" className='arrow_back' /></button></h2>
                 <div className='chat_message_cont'>
                     <div className='chat_message_top' onClick={profileInfoClick}>
                         <img src="" alt='' className='user_img'/>
                         <div className='chat_profile'>
                             <p className='user_name'>최유진 <img src={arrowRightIcon} alt="프로필 보기" /></p>
                             <p className='user_id'>eugene.yml</p>
-                            <button onClick={chatBackClick} className='chat_back_btn'><img src={arrowBackIcon} alt="뒤로가기" className='arrow_back' /></button>
                         </div>
                     </div>
                     <div className='chat_message_middle'>
@@ -34,7 +33,9 @@ function ChatMessage() {
                         </div>
                     </div>
                     <div className='chat_message_bottom'>
-                        
+                            <button className='chat_msg_btn photo_btn'><img src={photoIcon} alt="사진첨부" /></button>
+                            <p>yeah-!</p>
+                            <button className='chat_msg_btn send_btn'><img src={sendIcon} alt="보내기" /></button>
                     </div>
                 </div>
             </div>

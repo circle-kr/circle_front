@@ -49,10 +49,11 @@
     color: #777777;
 }
 
-.chat_back_btn{
-    position: absolute;
+.chat_back_btn img{
+    /* position: absolute;
     bottom: 10px;
-    right: 20px;
+    right: 20px; */
+    margin: 0;
 }
 
 .time_line{
@@ -77,4 +78,38 @@
 
 .chat_message_middle{
     text-align: right;
+    margin-bottom: 20px;
 }
+
+.chat_message_bottom{
+    height: 108px;
+    background: #F6F6F6;
+    border-radius: 50px;
+    position: relative;
+}
+
+.chat_message_bottom p{
+    position: absolute;
+    bottom: 20px;
+    left: 110px;
+}
+
+.chat_msg_btn{
+    border-radius: 50%;
+    background: #222222;
+    width: 80px;
+    height: 80px;
+}
+
+.photo_btn{
+    position: absolute;
+    bottom: 13px;
+    left: 13px;
+}
+
+.send_btn{
+    position: absolute;
+    bottom: 13px;
+    right: 13px;
+}
+
