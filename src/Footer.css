@@ -1,0 +1,28 @@
+.footer_wrap{
+    text-align: center;
+    border-top: 1px solid #fefefe;
+}
+
+.footer_cont{
+    width: 1280px;
+    margin: 0 auto;
+    padding: 40px 0;
+    box-sizing: border-box;
+}
+
+.footer_wrap h2{
+    font-size: 20px;
+}
+
+.footer_wrap p{
+    font-size: 14px;
+}
+
+.footer_02 h3{
+    font-size: 18px;
+}
+
+.footer_03 h3{
+    font-size: 14px;
+}
+
