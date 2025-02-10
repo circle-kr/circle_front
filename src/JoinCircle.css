@@ -41,10 +41,34 @@ section>div{
 
 .intro{
     width: 60%;
-    height: 260px;
     border-radius: 30px;
     background: #796BD8;
     margin-right: 40px;
+}
+
+.tag_wrap{
+    margin: 30px 0;
+}
+
+.tag_wrap>div{
+    margin-right: 10px;
+}
+
+.category_tag{
+    background: #fefefe;
+    border-radius: 30px;
+    padding: 7px 17px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.charateristic_tag{
+    background: #222222;
+    color: #fefefe;
+    border-radius: 30px;
+    padding: 7px 17px;
+    box-sizing: border-box;
+    display: inline-block;
 }
 
 .btn_wrap{
@@ -91,6 +115,43 @@ section>div{
     margin-right: 40px;
 }
 
+.community_preview_cont{
+    position: relative;
+}
+
+.prev_box{
+    display: flex;
+    gap: 10px;
+    margin: 30px 0 120px;
+}
+
+.prev_left{
+    width: 66px;
+    height: 66px;
+    background: #D9D9D9;
+    border-radius: 50px;
+}
+
+.prev_time{
+    color: #5E5959;
+    margin-left: 10px;
+}
+
+.pager{
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    margin: 0 auto;
+}
+
+.pager>div{
+    background: #D9D9D9;
+    border-radius: 50px;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+}
+
 section>div>h3{
     display: flex;
     align-items: center;
@@ -106,6 +167,32 @@ section>div>h3>img{
     height: 470px;
     background: #F9F9F9;
 }
+
+.activity h3{
+    margin-bottom: 20px;
+}
+
+.activ_box{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid #808080;
+}
+
+.activ_box img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    background: #D9D9D9;
+}
+
+.activ_box ul li:last-child{
+    font-size: 12px;
+    color: #666666;
+}
+
 
 .jc_notification{
     background: #D0FD5E;
@@ -125,4 +212,25 @@ section>div>h3>img{
     width: 100%;
     background: #F9F9F9;
     height: 810px;
+}
+
+.people h3{
+    margin-bottom: 40px;
+}
+
+.p_name{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.p_lang{
+    margin-bottom: 5px;
+}
+
+.people_box>img{
+    width: 215px;
+    height: 215px;
+    border-radius: 20px;
+    background: #D9D9D9;
 }

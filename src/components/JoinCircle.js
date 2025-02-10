@@ -14,7 +14,16 @@ function JoinCircle() {
             <div className='join_circle_cont1'>
                 <section className='intro'>
                     <div className='intro_cont'> 
-                        <h3></h3>
+                        <h3>Hello, chill guys~!</h3>
+                        <div className='tag_wrap'>
+                            <div className='category_tag'>
+                                category
+                            </div>
+                            <div className='charateristic_tag'>
+                                charateristic
+                            </div>
+                        </div>
+                        <p>contents</p>
                     </div>
                 </section>
                 
@@ -28,12 +37,33 @@ function JoinCircle() {
                 <section className='community_preview'>
                     <div className='community_preview_cont'> 
                         <h3><img src={communityPreviewIcon} alt='미리보기'/>Community preview</h3>
+                        <div className='prev_box'>
+                            <div className='prev_left'></div>
+                            <div className='prev_right'>
+                                <p>Nickname <span className='prev_time'>time</span></p>
+                                <p>contents</p>
+                            </div>
+                        </div>
+                        <div className='pager'>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
                     </div>
                 </section>
 
                 <section className='activity'>
                     <div className='activity_cont'>
                         <h3><img src={activityIcon} alt=''/>Activity</h3>
+                        <div className='activ_box'>
+                            <img src="" alt="" />
+                            <ul>
+                               <li>Activity contents</li>
+                               <li>time</li>
+                            </ul>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -42,6 +72,7 @@ function JoinCircle() {
                 <section className='notification jc_notification'>
                     <div className='notification_cont'>
                         <h3><img src={notificationIcon} alt=''/>Notification</h3>
+                        <p>contents</p>
                     </div>
                 </section>
                 <section className='schedule'>
@@ -54,6 +85,14 @@ function JoinCircle() {
             <section className='people'>
                 <div className='notification_cont'>
                     <h3><img src={peopleIcon} alt=''/>People</h3>
+                    <div className='people_box'>
+                        <img src="" alt="" />
+                        <ul>
+                            <li className='p_name'>name</li>
+                            <li className='p_lang'>language</li>
+                            <li className='p_major'>major</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
         </div>
