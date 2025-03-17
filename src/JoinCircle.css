@@ -19,7 +19,7 @@ section{
 }
 
 section>div{
-    padding: 30px;
+    padding: 40px;
     box-sizing: border-box;
     color: #222222;
 }
@@ -41,10 +41,34 @@ section>div{
 
 .intro{
     width: 60%;
-    height: 260px;
     border-radius: 30px;
     background: #796BD8;
     margin-right: 40px;
+}
+
+.tag_wrap{
+    margin: 30px 0;
+}
+
+.tag_wrap>div{
+    margin-right: 10px;
+}
+
+.category_tag{
+    background: #fefefe;
+    border-radius: 30px;
+    padding: 7px 17px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.charateristic_tag{
+    background: #222222;
+    color: #fefefe;
+    border-radius: 30px;
+    padding: 7px 17px;
+    box-sizing: border-box;
+    display: inline-block;
 }
 
 .btn_wrap{
@@ -91,7 +115,54 @@ section>div{
     margin-right: 40px;
 }
 
-.join_circle_wrap section>div h3{
+.community_preview_cont{
+    position: relative;
+}
+
+.community_preview_cont h3{
+    margin-bottom: 30px;
+}
+
+.profile_prev{
+    display: flex !important;
+    margin-bottom: 200px;
+}
+
+.profile_prev img{
+    width: 70px;
+    height: 70px;
+    background: #666666;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+
+.profile_prev dl{
+    width: 560px;
+}
+
+.profile_prev dt{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.profile_prev dt .time{
+    color: #5E5959;
+    margin-left: 10px;
+}
+
+.profile_prev dd{
+    font-size: 20px;
+}
+
+.slick-prev:before,.slick-next:before{
+    display: none;
+}
+
+.slick-dots{
+    position: relative !important;
+}
+
+section>div>h3{
     display: flex;
     align-items: center;
     font-size: 28px;
@@ -107,6 +178,31 @@ section>div>h3>img{
     background: #F9F9F9;
 }
 
+.activ_box{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.activ_box:last-child{
+    border: none;
+}
+
+.activ_box img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    background: #D9D9D9;
+}
+
+.activ_box ul li:last-child{
+    font-size: 12px;
+    color: #666666;
+}
+
 .jc_notification{
     background: #D0FD5E;
     height: 300px;
@@ -115,13 +211,44 @@ section>div>h3>img{
 }
 
 .schedule{
-    width: 38%;
     background: #F9F9F9;
     height: 300px;
+    overflow: hidden;
 }
 
 .people{
     width: 100%;
     background: #F9F9F9;
     height: 810px;
+}
+
+.p_container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.people_box{
+    margin-bottom: 40px;
+    margin-right: 80px;
+}
+
+.people h3{
+    margin-bottom: 40px;
+}
+
+.p_name{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.p_lang{
+    margin-bottom: 5px;
+}
+
+.people_box>img{
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    background: #D9D9D9;
 }
