@@ -42,12 +42,7 @@ const Schedule: React.FC = () => {
   const handleEventClick = (info: EventInput) => {
     console.log("Cliquei no evento de: ", info.event);
   }
-
-
- 
-
   return (
-    
     <div className="schedule_wrap">
       <>
       <FullCalendar
@@ -72,7 +67,6 @@ const Schedule: React.FC = () => {
         eventChange={function(){}} // 이벤트 수정
         eventRemove={function(){}} // 이벤트 삭제
       />
-
       {isOpen && (
             <SchedulePopUp
               isOpen={isOpen}
@@ -80,7 +74,6 @@ const Schedule: React.FC = () => {
             />
           )}
         </>
-      
         </div>
   );
 };
