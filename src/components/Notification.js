@@ -13,7 +13,7 @@ function Notification() {
 
     return(
     <main className='main sub_main'>
-        <div className='notification_wrap'>
+        <div className='menu_notification_wrap'>
             <h2>Notification</h2>
             <div className='notification_cont'>
                 <div className={`follow_cont ${follwVisible ? 'show' : 'hide'}`}>
