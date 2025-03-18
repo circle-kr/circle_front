@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import '../JoinCircle.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import favoriteStrokeIcon from '../images/favorite_stroke_icon.svg'
+import strokeHeartIcon from '../images/favorite_stroke_icon.svg'
+import heartIcon from '../images/favorite_icon.svg'
 import communityPreviewIcon from '../images/visibility_icon.svg'
 import activityIcon from '../images/activity_icon.svg'
 import notificationIcon from '../images/notification_icon.svg'
 import peopleIcon from '../images/people_icon.svg'
 import Schedule from './Schedule'
 function JoinCircle() {
+    const [clickHeart, setClickHeart] = useState(strokeHeartIcon);
+    const handleHeartClick = () => {
+        setClickHeart(clickHeart === strokeHeartIcon ? heartIcon : strokeHeartIcon);
+    };
+  
         const settings = {
           dots: true,
           infinite: true,
@@ -20,7 +26,7 @@ function JoinCircle() {
         };
 
         const profiles = [
-            { nickname: "user1", time: "12:30", text: "contents", imgSrc: "" },
+            { nickname: "user1", time: "12:30", text: "권력은 결코 뒷걸음치지 않는다 - 더 큰 권력 앞에서가 아니라면. 권력은 결코 뒷걸음치지 않는다 - 더 큰 권력 앞에서가 아니라면. 권력은 결코 뒷걸음치지 않는다 - 더 큰 권력 앞에서가 아니라면. 권력은 결코 뒷걸음치지 않는다 - 더 큰 권력 앞에서가 아니라면. 권력은 결코 뒷걸음치지 않는다 - 더 큰 권력 앞에서가 아니라면. 권력은 결코 뒷걸음치지 않는다 - 더 큰 권력 앞에서가 아니라면. 권력은 결코 뒷걸음치지 않는다 - 더 큰 권력 앞에서가 아니라면.", imgSrc: "" },
             { nickname: "user2", time: "13:45", text: "contents", imgSrc: "" },
             { nickname: "user3", time: "14:10", text: "contents", imgSrc: "" },
             { nickname: "user4", time: "15:20", text: "contents", imgSrc: "" },
@@ -48,7 +54,7 @@ function JoinCircle() {
     return(
     <main className='main sub_main'>
         <div className='join_circle_wrap'>
-            <h2>Join circle <img src={favoriteStrokeIcon} alt="찜하기" /></h2>
+            <h2>Join circle <button onClick={handleHeartClick}><img src={clickHeart} alt="찜하기"/></button></h2>
             <div className='join_circle_cont1'>
                 <section className='intro'>
                     <div className='intro_cont'> 
@@ -73,7 +79,8 @@ function JoinCircle() {
 
             <div className='join_circle_cont2'>
                 <section className='community_preview'>
-                    <div className='community_preview_cont'> 
+                    <div className='community_preview_cont'>
+                        <div className="filter"></div> 
                         <h3><img src={communityPreviewIcon} alt='미리보기'/>Community preview</h3>
                         <div className="slider-container">
                         <Slider {...settings}>
