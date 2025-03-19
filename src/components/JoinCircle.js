@@ -15,6 +15,10 @@ function JoinCircle() {
     const handleHeartClick = () => {
         setClickHeart(clickHeart === strokeHeartIcon ? heartIcon : strokeHeartIcon);
     };
+    const [joinBtn, setJoinBtn] = useState("Join the Club");
+    const handleJoinBtn = () => {
+        setJoinBtn((prev) => (prev === "Join the Club" ? "Leave the Club" : "Join the Club"))
+    }
   
         const settings = {
           dots: true,
@@ -72,7 +76,7 @@ function JoinCircle() {
                 </section>
                 
                 <div className='btn_wrap'>
-                    <button className='join_btn'>Join the Club <span>→</span></button>
+                    <button className='join_btn' onClick={handleJoinBtn}>{joinBtn} <span>→</span></button>
                     <button className='inquiry_btn'>1:1 inquiry <span>→</span></button>
                 </div>
             </div>
@@ -80,6 +84,7 @@ function JoinCircle() {
             <div className='join_circle_cont2'>
                 <section className='community_preview'>
                     <div className='community_preview_cont'>
+                        <button className="go_community">자세히 보기</button>
                         <div className="filter"></div> 
                         <h3><img src={communityPreviewIcon} alt='미리보기'/>Community preview</h3>
                         <div className="slider-container">
