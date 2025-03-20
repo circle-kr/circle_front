@@ -115,38 +115,48 @@ section>div{
     background: #B87EEE;
     grid-column: 1 / 3;
     grid-row: 2 / 3;
+    height: 100%;
 }
 
 .community_preview_cont{
     position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .go_community{
-    width: 200px;
+    width: 30%;
     height: 50px;
+    top: 30%; 
+    left: 50%;
+    transform: translateX(-50%);
     background: #222222;
     border-radius: 15px;
     color: #fefefe;
     position: absolute;
-    top: 220px;
-    left: 260px;
     z-index: 20;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 16px;
+    transition: all 0.3s;
+}
+
+.go_community:hover{
+    background: #fefefe;
+    color: #000;
 }
 
 .filter{
     margin: auto;
     width: 100%;
-    height: 200px;
+    height: 230px;
     position: absolute;
     z-index: 10;
-    top: 195px;
+    top: 80px;
     left: 0;
-    backdrop-filter: blur(5px);
-    filter: blur(5px);
+    backdrop-filter: blur(3px);
+    background-color: rgba(184, 126, 238, 0.8);
 }
 
 .slick-slider .slick-track, .slick-slider .slick-list{
@@ -192,8 +202,18 @@ section>div{
     display: none;
 }
 
+.slider-container{
+    height: 100%;
+    position: relative;
+}
+
+.slick-slider{
+    height: 80%;
+    position: relative;
+}
+
 .slick-dots{
-    position: static !important; 
+     bottom: 0;  
 }
 
 section>div>h3{

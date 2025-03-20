@@ -82,8 +82,6 @@ function JoinCircle() {
 
                     <section className='community_preview'>
                         <div className='community_preview_cont'>
-                            <button className="go_community">자세히 보기</button>
-                            <div className="filter"></div> 
                             <h3><img src={communityPreviewIcon} alt='미리보기'/>Community preview</h3>
                             <div className="slider-container">
                             <Slider {...settings}>
@@ -99,6 +97,8 @@ function JoinCircle() {
                                     </div>
                                 ))}
                             </Slider>
+                            <button className="go_community">자세히 보기</button>
+                            <div className="filter"></div> 
                             </div>
                         </div>
                     </section>
