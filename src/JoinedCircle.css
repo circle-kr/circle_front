@@ -115,6 +115,42 @@ section>div{
     margin-right: 20px;
 }
 
+.popup_wrap{
+    position: absolute;
+    left: 11%;
+    width: 900px;
+    padding: 20px;
+    border-radius: 20px;
+    background: #f9f9f9;
+    font-size: 48px;
+    text-align: center;
+}
+
+.popup_wrap button{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.popup_wrap button img{
+    width: 40px;
+    height: 40px;
+}
+
+.popup_wrap p{
+    padding: 30px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.popup_wrap p:hover{
+    font-weight: bold;
+}
+
+.popup_wrap p:first-of-type{
+    border-bottom: 1px solid #777777;
+}
+
 .top_btn_wrap{
     position: absolute;
     top: 0;

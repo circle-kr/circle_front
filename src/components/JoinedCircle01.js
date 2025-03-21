@@ -5,14 +5,40 @@ import notificationIcon from '../images/notification_icon.svg'
 import feedIcon from '../images/feed_write_icon.svg'
 import editIcon from '../images/edit_icon.svg'
 import moreIcon from '../images/more_icon.svg'
+import closeIcon from '../images/close_icon_black.svg'
 import photoIcon from '../images/photo_icon.svg'
 import favoriteIcon from '../images/favorite_stroke_icon.svg'
 import commentIcon from '../images/chat_icon.svg'
-
+import { useState,useRef,useEffect } from 'react';
 
 function JoinedCircle01() {
     const categoryBtn = ["category"];
     const charateristicBtn = ["charateristic1","charateristic2"];
+    const [isPopupVisible, setIsPopupVisible] = useState(false); // State for popup visibility
+    const popupClick = () => {
+        setIsPopupVisible(!isPopupVisible)
+    }
+    const closePopup = () => {
+        setIsPopupVisible(false);
+      }
+      const popupRef = useRef(null);
+       // 팝업 외부 클릭 시 팝업 닫기
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (popupRef.current && !popupRef.current.contains(event.target)) {
+        closePopup(); // 외부 클릭 시 팝업 닫기
+      }
+    };
+
+    // 이벤트 리스너 추가
+    document.addEventListener('mousedown', handleClickOutside);
+
+    // 클린업 함수
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
     return(
     <main className='main sub_main'>
         <div className='joined_circle_wrap'>
@@ -56,9 +82,20 @@ function JoinedCircle01() {
                                 <h4>nickname</h4>
                                 <div className='top_btn_wrap'>
                                     <button className='follow'>Follow</button>
-                                    <button><img src={moreIcon} alt="" /></button>
+                                    <button onClick={popupClick}><img src={moreIcon} alt="" /></button>
                                 </div>
                             </div>
+
+                            <>
+                            {isPopupVisible === true &&(
+                            <div className='popup_wrap' ref={popupRef}>
+                                <button onClick={closePopup}><img src={closeIcon} alt="닫기" /></button>
+                                <p>Edit</p>
+                                <p>Delete</p>
+                            </div>
+                            )} 
+                            </>     
+
                             <div className='sns_bottom'>
                                 <div className='sns_img'>
                                     <img src="" alt="" />
@@ -79,6 +116,5 @@ function JoinedCircle01() {
             </div>
         </div>
     </main>
-    )
-}
+    )}
 export default JoinedCircle01;
