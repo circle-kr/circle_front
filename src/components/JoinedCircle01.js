@@ -1,4 +1,4 @@
-import { useState,useRef,useEffect } from 'react';
+import { useState,useRef,useEffect} from 'react';
 import React from 'react';
 import '../JoinedCircle.css';
 import Schedule from './Schedule';
@@ -25,7 +25,8 @@ function JoinedCircle01() {
         setIsFollowed(!isFollowed)
     }
 
-    const morePopUpClick = () => {
+    const morePopUpClick = (event) => {
+        event.stopPropagation(); // 이벤트 버블링 방지
         setIsMoreVisible(!isMoreVisible)
     }
 
@@ -38,19 +39,23 @@ function JoinedCircle01() {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
+        console.log("부모")
+        setTimeout(() => closePopup(), 0); // 0ms 딜레이 후 실행
       if (popupRef.current && !popupRef.current.contains(event.target)) {
         closePopup(); // 외부 클릭 시 팝업 닫기
       }
     };
 
     // 이벤트 리스너 추가
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('click', handleClickOutside);
 
     // 클린업 함수
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('click', handleClickOutside);
     };
   }, []);
+
+  
 
     const likedToggle = () => {
         setIsLiked(isLiked === unlikedIcon ? likedIcon : unlikedIcon )
@@ -97,7 +102,7 @@ function JoinedCircle01() {
                 <section className='feed'>
                     <div className='feed_cont'>
                         <h3><img src={feedIcon} alt=''/>Feed </h3><button className='feed_write' onClick={() => setIsPopupOpen(true)}><img src={feedWriteIcon} alt='글쓰기'/></button>
-                        {isPopupOpen && <PostPopUp onClose={() => setIsPopupOpen(false)} ref={popupRef} />}
+                        {isPopupOpen && <PostPopUp ref={popupRef} onClose={() => setIsPopupOpen(false)}  />}
                         <div className='sns_box'>
                             <div className='sns_top'>
                                 <img src="" alt="" className='profile_img'/>

@@ -1,15 +1,15 @@
-import React, {useEffect, useRef,useState} from 'react'
+import React, {useEffect, useRef,useState,forwardRef} from 'react'
 import '../PostPopUp.css'
 import closeIcon from '../images/close_icon_black.svg'
 import photoIcon from '../images/photo_icon.svg'
 
-function PostPopUp({onClose}) {
+const PostPopUp = forwardRef(({onClose},popupRef) => {
     const [ text, setText ] = useState('');
     const handleInputChange = (e) => {
         setText(e.target.value);
     }
     const textareaRef = useRef(null);
-        const fileInputRef = useRef(null);
+    const fileInputRef = useRef(null);
 
     useEffect( () => {
         if(textareaRef.current){
@@ -21,9 +21,10 @@ function PostPopUp({onClose}) {
     const handleClick = () => {
         fileInputRef.current.click(); // 파일 업로드 input 클릭 트리거
       };
+    
   return (
-    <div className="popup-overlay" >
-      <div className="popup-content">
+    <div className="popup-overlay">
+      <div className="popup-content" ref={popupRef}>
       <button onClick={onClose} className='post_close'><img src={closeIcon} alt="" /></button>
         <div className='popup_top'>
             <div><img src="" alt="" /></div>
@@ -54,6 +55,6 @@ function PostPopUp({onClose}) {
       </div>
     </div>
   );
-};
+});
 
-export default React.forwardRef(PostPopUp);
+export default PostPopUp;
