@@ -8,8 +8,8 @@ import feedIcon from '../images/chat_icon.svg'
 import feedWriteIcon from '../images/feed_write_icon.svg'
 import moreIcon from '../images/more_icon.svg'
 import closeIcon from '../images/close_icon_black.svg'
-import unlikedIcon from '../images/favorite_stroke_icon.svg'
-import likedIcon from '../images/favorite_icon.svg'
+import unlikedIcon from '../images/favorite_stroke_black_icon.svg'
+import likedIcon from '../images/favorite_black_icon.svg'
 import commentIcon from '../images/chat_icon.svg'
 
 function JoinedCircle01() {
