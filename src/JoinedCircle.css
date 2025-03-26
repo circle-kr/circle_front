@@ -91,6 +91,16 @@ section>div{
     margin-bottom: 30px;
 }
 
+.feed_write{
+    position: absolute;
+    right: 40px;
+    top: 40px;
+}
+
+.feed_cont{
+    position: relative;
+}
+
 .sns_top h4{
     font-size: 24px;
     font-weight: bold;
@@ -113,6 +123,17 @@ section>div{
     color: #FEFEFE;
     font-size: 24px;
     margin-right: 20px;
+}
+
+ .fw_clicked{
+    background: #FEFEFE;
+    border: 2px solid #000;
+    color: #000;
+}
+
+.sns_more img{
+    width: 40px;
+    height: 40px;
 }
 
 .popup_wrap{
@@ -155,6 +176,8 @@ section>div{
     position: absolute;
     top: 0;
     right: 0;
+    display: flex;
+    align-items: center;
 }
 
 .sns_img{
@@ -162,4 +185,22 @@ section>div{
     height: 965px;
     background: #000;
     margin-bottom: 30px;
+}
+
+.sns_like{
+    margin-right: 20px;
+}
+
+.sns_like img{
+    width: 40px;
+    height: 40px;
+}
+
+.comm_align{
+    display: flex;
+    text-align: center;
+}
+
+.comm_like{
+    margin-left: 10px;
 }
