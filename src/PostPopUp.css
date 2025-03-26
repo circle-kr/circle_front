@@ -1,0 +1,79 @@
+.popup-overlay{
+    width: 100%;
+    border-radius: 30px;
+    box-shadow: 1px 1px 6px #acacac;
+    background: #fefefe;
+    position: absolute;
+    left: 0;
+    top: 100px;
+    z-index: 40;
+}
+
+.popup-content{
+    position: relative;
+    padding: 40px;
+}
+
+.post_close{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.post_close img{
+    width: 50px;
+    height: 50px;
+}
+
+.popup_top{
+    display: flex;
+    gap: 7px;
+}
+
+.popup_top img{
+    width: 50px;
+    height: 50px;
+    background: #000;
+    border-radius: 50px;
+}
+
+.popup_top textarea{
+    width: 100%;
+    font-size: 28px;
+    padding: 7px;
+    border: none;
+    margin-bottom: 20px;
+    resize: none;
+    overflow: hidden;
+    height: auto;
+    min-height: 300px;
+    }
+
+.popup_top textarea:focus{
+    border: none;
+    outline: none;
+}
+
+.post_photo{
+    width: 58px;
+    height: 58px;
+}
+
+.post_btn{
+    padding: 18px 44px;
+    box-sizing: border-box;
+    background: #000;
+    border-radius: 50px;
+    color: #fefefe;
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+}
+
+.post_btn:hover{
+    background: #fefefe;
+    color: #000;
+    border: 2px solid #000;
+}
