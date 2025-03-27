@@ -1,11 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import './App.css';
-import Header from './components/Header.js';
+import Header from './components/Header';
 import Content from './components/Content';
-import SideMenu from './components/SideMenu.js';
+import SideMenu from './components/SideMenu';
 import Footer from './components/Footer';
-import Notification from './components/Notification.js'
+import Notification from './components/Notification'
+import RequestPopUp from './components/RequestPopUp';
 
 function App() {
     const [collapsed, setCollapsed] = useState(false); // 열고 닫힘 상태
@@ -24,6 +25,7 @@ function App() {
               <Route path="/SideMenu" element={<SideMenu />} />
                 <Route path="/" element={<Content />} />
                 <Route path="/Notification" element={<Notification />} />
+                <Route path="/RequestPopUp" element={<RequestPopUp />} />
                 <Route path="/Footer" element={<Footer />} />
               </Routes>
             </div>
