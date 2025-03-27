@@ -22,7 +22,7 @@ function RequestPopUp() {
         },
     ];
     const selectedRequest = requests.find((request) => request.type === type);
-    
+
     return (
         <main className="main sub_main">
             <div className="request_popup_wrap">
@@ -50,5 +50,4 @@ function RequestPopUp() {
         </main>
     );
 }
-
 export default RequestPopUp;
