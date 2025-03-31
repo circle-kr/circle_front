@@ -50,10 +50,9 @@ function App() {
             <Route path="/SchedulePopUp" element={<SchedulePopUp />} />
           </Routes>
         </div>
+        </Router>
         <Footer />
-      </Router>
     </div>
   );
 }
-
 export default App;

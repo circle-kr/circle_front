@@ -10,26 +10,43 @@ import NaverSignIn from './NaverSignIn';
 import GoogleSignIn from './GoogleSignIn';
 
 function SignUp() {
-  const { register, handleSubmit, watch,setError, clearErrors,formState: { errors } } = useForm({ mode: 'onChange' });
-  const [nickNameIsDuplicate, setNickNameIsDuplicate] = useState(false); 
-  const [emailIsDuplicate, setEmailIsDuplicate] = useState(false);  // 중복 여부 상태
+  const { register, handleSubmit, watch, setError, clearErrors, formState: { errors } } = useForm({ mode: 'onChange' });
+  const [isDuplicateNickname, setIsDuplicateNickname] = useState(false);
+  const [isDuplicateEmail, setIsDuplicateEmail] = useState(false);  // 중복 여부 상태
   const [showPwd, setShowPwd] = useState(false);
-  const Navigate = useNavigate()
+  const navigate = useNavigate();
 
+  const email = watch("email"); // 이메일 값을 추적
+  const nickname = watch("nickname"); // 닉네임 값을 추적
   const pwd = watch("password"); // 비밀번호 값을 추적
 
-  function togglePwdVisibility(){
-    setShowPwd((prev) => !prev); 
+  function togglePwdVisibility() {
+    setShowPwd((prev) => !prev);
   }
 
-  function SignInClick(){
-    Navigate('../SignIn')
+  function SignInClick() {
+    navigate('../SignIn');
   }
+
+  // const nicknameCheck = () => {
+
+  // }fetch("/nicknameCheck?")
+  // .then(  res => res.text() )
+  // .then( result => {
+  //   console.log(``)
+
+  // })
+
 
   const onSubmit = async (data) => {
+    if (isDuplicateEmail || isDuplicateNickname) {
+      // 중복이 있을 경우 제출하지 않음
+      console.log("중복 확인이 필요합니다.");
+      return;
+    }
     try {
       const response = await axios.post(
-        `http://localhost:8080/api/users`,
+        `https://8d80-210-206-96-219.ngrok-free.app/api/users`,
         {
           firstName: data.firstName,
           lastName: data.lastName,
@@ -45,54 +62,44 @@ function SignUp() {
       );
 
       console.log("Response:", response.data);
-  
+
       if (response.status === 201) {
         alert('회원가입 성공!');
-        Navigate('/SignIn'); // 회원가입 후 로그인 페이지로 이동
+        navigate('/SignIn'); // 회원가입 후 로그인 페이지로 이동
       }
     } catch (error) {
       console.error('회원가입 오류:', error);
       alert('회원가입에 실패했습니다.');
-      // 상세 오류 출력
-    if (error.response) {
-      console.error("응답 데이터:", error.response.data);
-      console.error("응답 상태:", error.response.status);
-      console.error("응답 헤더:", error.response.headers);
-    } else if (error.request) {
-      console.error("요청 데이터:", error.request);
-    } else {
-      console.error("에러 메시지:", error.message);
-    }
-    }
-  };
-
-  const handleDuplicateCheck = async (field, value) => {
-    try {
-      const response = await axios.post(
-        'http://localhost:8080/api/check-duplicate',
-        { [field]: value }
-      );
-
-      if (response.data.isDuplicate) {
-        setError(field, { type: 'manual', message: `${field} is already taken` });
-        if (field === 'nickname') {
-          setNickNameIsDuplicate(true);
-        } else if (field === 'email') {
-          setEmailIsDuplicate(true);
-        }
+      if (error.response) {
+        console.error("응답 데이터:", error.response.data);
+        console.error("응답 상태:", error.response.status);
+        console.error("응답 헤더:", error.response.headers);
+      } else if (error.request) {
+        console.error("요청 데이터:", error.request);
       } else {
-        clearErrors(field);
-        if (field === 'nickname') {
-          setNickNameIsDuplicate(false);
-        } else if (field === 'email') {
-          setEmailIsDuplicate(false);
-        }
+        console.error("에러 메시지:", error.message);
       }
-    } catch (error) {
-      console.error('중복 확인 오류:', error);
-      setError(field, { type: 'manual', message: 'Failed to check duplicate' });
     }
   };
+
+
+  
+
+  // const handleDuplicateCheck = async (field, value) => {
+  //   if (!value) return; // 빈 값이면 요청 안 보냄
+  
+  //   try {
+  //     const response = await axios.post("https://8d80-210-206-96-219.ngrok-free.app/api/check-duplicate", { [field]: value });
+  //     if (response.data.isDuplicate) {
+  //       setError(field, { type: "manual", message: `${field} is already taken` });
+  //     } else {
+  //       clearErrors(field);
+  //     }
+  //   } catch (error) {
+  //     console.error("중복 확인 오류:", error);
+  //   }
+  // };
+
   
   return (
     <main className="main sub_main">
@@ -162,9 +169,8 @@ function SignUp() {
                 />
                 <button className='duplicate_btn'
                  type="button"
-                onClick={() => handleDuplicateCheck('nickname', document.getElementById('nickname').value)}
                 ><img src={checkIcon} alt='닉네임 중복체크'/>Duplicate check</button>
-                 {nickNameIsDuplicate && <p>Nickname is already taken.</p>}
+                 {setIsDuplicateNickname && <p>Nickname is already taken.</p>}
                </div>
                {errors.nickName && <p className="error">{errors.nickName.message}</p>}
            </div>
@@ -183,9 +189,8 @@ function SignUp() {
                     />
                     
                     <button className='duplicate_btn' type="button"><img src={checkIcon} alt='이메일 중복체크'
-                     onClick={() => handleDuplicateCheck('email', document.getElementById('email').value)}
                     />Duplicate check</button>
-                     {emailIsDuplicate && <p>email is already taken.</p>}
+                     {setIsDuplicateEmail && <p>email is already taken.</p>}
                </div>
                {errors.email && <p className="error">{errors.email.message}</p>}
            </div>
