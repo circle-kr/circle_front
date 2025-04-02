@@ -19,6 +19,7 @@
 
 .profile_top{
     position: relative;
+    margin-bottom: 40px;
 }
 
 .profile_img{
@@ -36,6 +37,10 @@
     position: absolute;
     bottom: 0;
     left: 100px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .profile_top_btn{
@@ -63,20 +68,35 @@
     margin-left: 10px;
 }
 
-.profile_bottom form>div{
-    display: flex;
+.profile_input{
     margin-bottom: 20px;
 }
 
-.profile_bottom form>div>div{
+.profile_input .error{
+    font-size: 14px;
+    color: red;
+}
+
+.profile_input>div{
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.profile_input label{
     margin-right: 40px;
 }
 
-.profile_bottom form p{
+.profile_input span{
+    display: block;
+    color: #796BD8;
+    margin-bottom: 10px;
+}
+
+.profile_input p{
     color: #888888;
 }
 
-.profile_bottom form input{
+.profile_input input{
     padding: 15px;
     box-sizing: border-box;
     width: 300px;
@@ -84,7 +104,7 @@
     border-radius: 30px;
 }
 
-.profile_bottom form select{
+.profile_input select{
     padding: 15px;
     width: 400px;
     border-radius: 30px;
@@ -104,12 +124,16 @@
     color: #796BD8;
 }
 
-.profile_bottom form .profile_bottom_04>div{
+.profile_bottom_04{
+    width: 100%;
+}
+
+.profile_input .profile_bottom_04>label{
     width: 100%;
     margin: 0;
 }
 
-.profile_bottom_04>div input{
+.profile_input .profile_bottom_04>label input{
     width: 100%;
 }
 
