@@ -1,11 +1,13 @@
 import React, {useState,useRef} from 'react'
 import { useForm } from 'react-hook-form'
+import Select from 'react-select'
 import '../Profile.css'
 import cameraIcon from '../images/camera_icon.svg'
 import editIcon from '../images/edit_icon.svg'
 import saveIcon from '../images/save_icon.svg'
 function Profile() {
     const { register, handleSubmit, formState: { errors } } = useForm({ mode: "onChange" });
+    const [selectedLanguages,setSelectedLanguages] = useState([]);
     const fileInputRef = useRef(null);
     const [preview, setPreview] = useState(null);
     const handleClick = () => {
@@ -20,9 +22,31 @@ function Profile() {
         }
     };
 
-    const onSubmit = (data) => {
-    console.log(data);
-    };
+    const onSubmit = async () => {
+        const payload = {
+          languages: selectedLanguages // ["KOREAN", "ENGLISH", "JAPANESE"]
+        };
+      
+        await fetch("/api/users", {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+      };
+
+    const languages = [
+        { value: "KOREAN", name: "Korean" },
+        { value: "JAPANESE", name: "Japanese" },
+        { value: "CHINESE", name: "Chinese" },
+        { value: "ENGLISH", name: "English" },
+        { value: "VIETNAMESE", name: "Vietnamese" },
+        { value: "SPANISH", name: "Spanish" },
+        { value: "PORTUGUESE", name: "Portuguese" },
+        { value: "ITALIAN", name: "Italian" }
+      ];
+
+
+      
 
     return(
     <main className='main sub_main'>
@@ -146,16 +170,18 @@ function Profile() {
                                     />
                                     {errors.country && <p className="error">{errors.country.message}</p>}
                                 </label>
-
+     
                                 <label htmlFor='la'>
                                     <span>Language <span style={{"display" : "inline"}}>*multiple options available</span></span>
-                                    <select name="languages" id='la'>
-                                        <option value='korea'>Korea</option>
-                                        <option value='japan'>Japan</option>
-                                        <option value='china'>China</option>
-                                        <option value='us'>United state</option>
-                                        <option value='uk'>United kingdom</option>
-                                    </select>
+                                    <Select
+                                    className='select'
+                                    options={languages}
+                                    isMulti
+                                    getOptionLabel={(e) => e.name}  // 👉 `name`을 라벨로 표시!
+                                    getOptionValue={(e) => e.value} // 👉 `value`를 값으로 설정!
+                                    value={selectedLanguages}
+                                    onChange={setSelectedLanguages}
+                                />
                                 </label>
                             </div>
 

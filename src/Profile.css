@@ -104,19 +104,23 @@
     border-radius: 30px;
 }
 
-.profile_input select{
-    padding: 15px;
+.profile_input .select{
+    padding: 5px;
     width: 400px;
     border-radius: 30px;
     border: 1px solid #BEBEBE;
+    font-size: 16px;
     color: #888888;
-    -o-appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background: url(./images/keyboard_arrow_down_icon.svg) center right 10px no-repeat;
-    background-size: 20px;
-    outline: 0 none;
+}
+
+.css-13cymwt-control{
+    border: none !important;
+    background: none !important;
+}
+
+.css-13cymwt-control:focus{
+    outline: none;
+    box-shadow: none;
 }
 
 .profile_bottom_03 span{
