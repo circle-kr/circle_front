@@ -11,20 +11,21 @@ function Profile() {
     const fileInputRef = useRef(null);
     const [preview, setPreview] = useState(null);
     const handleClick = () => {
-        fileInputRef.current.click(); // 파일 업로드 input 클릭 트리거
+        fileInputRef.current.click();
       };
 
     const handleFileChange = (event) => {
-        const file = event.target.files[0]; // 첫 번째 파일만 가져오기
+        const file = event.target.files[0];
         if (file) {
-        const imageUrl = URL.createObjectURL(file); // URL 생성
-        setPreview(imageUrl); // 미리보기 상태 업데이트
+        const imageUrl = URL.createObjectURL(file); 
+        setPreview(imageUrl); 
         }
     };
 
-    const onSubmit = async () => {
+    const onSubmit = async (data) => {
         const payload = {
-          languages: selectedLanguages // ["KOREAN", "ENGLISH", "JAPANESE"]
+          ...data,
+          languages: selectedLanguages.map(lang => lang.value) 
         };
       
         await fetch("/api/users", {
@@ -32,6 +33,9 @@ function Profile() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload)
         });
+
+        console.log(payload);
+
       };
 
     const languages = [
@@ -45,15 +49,12 @@ function Profile() {
         { value: "ITALIAN", name: "Italian" }
       ];
 
-
-      
-
     return(
     <main className='main sub_main'>
         <div className='profile_wrap'>
             <h2>Profile</h2>
             <div className='profile_cont'>
-                <form method='get' onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit(onSubmit)}>
                 <div className='profile_top'>
                     <div className='profile_img_wrap'>
                         <input type="file" name="profileImage" id="fi" 
@@ -79,7 +80,7 @@ function Profile() {
                     </div>
                     <div className='profile_top_btn'>
                         <button>Edit <img src={editIcon} alt="편집하기" /></button>
-                        <button>Save <img src={saveIcon} alt="저장하기" /></button>
+                        <button type='submit'>Save <img src={saveIcon} alt="저장하기" /></button>
                     </div>
                 </div>
                 <div className='profile_bottom'>
@@ -113,7 +114,7 @@ function Profile() {
                                 
                                 <label htmlFor='nn'>
                                     <span>Nick name</span>
-                                    <input type="text" name="nickname" id="nn" placeholder='Nick name' oninput="checkInput()"
+                                    <input type="text" name="nickname" id="nn" placeholder='Nick name' 
                                     {...register("nickName",
                                         {
                                     validate: {
@@ -177,8 +178,8 @@ function Profile() {
                                     className='select'
                                     options={languages}
                                     isMulti
-                                    getOptionLabel={(e) => e.name}  // 👉 `name`을 라벨로 표시!
-                                    getOptionValue={(e) => e.value} // 👉 `value`를 값으로 설정!
+                                    getOptionLabel={(e) => e.name}  
+                                    getOptionValue={(e) => e.value} 
                                     value={selectedLanguages}
                                     onChange={setSelectedLanguages}
                                 />
@@ -188,7 +189,8 @@ function Profile() {
                             <div className='profile_bottom_04'>
                                 <label htmlFor='bio'>
                                     <span>Bio</span>
-                                    <input type="text" name="bio" id="bio" placeholder='Bio'/>
+                                    <input type="text" name="bio" id="bio" placeholder='Bio'
+                                    {...register("bio")}/>
                                 </label>
                             </div>
                         </div>
