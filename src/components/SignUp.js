@@ -10,15 +10,59 @@ import NaverSignIn from './NaverSignIn';
 import GoogleSignIn from './GoogleSignIn';
 
 function SignUp() {
-  const { register, handleSubmit, watch, setError, clearErrors, formState: { errors } } = useForm({ mode: 'onChange' });
-  const [isDuplicateNickname, setIsDuplicateNickname] = useState(false);
-  const [isDuplicateEmail, setIsDuplicateEmail] = useState(false);  // 중복 여부 상태
+  const { register, handleSubmit, watch, axiosInstance, setFocus, formState: { errors } } = useForm({ mode: 'onChange' });
+  const [isDuplicateNickname, setIsDuplicateNickname] = useState(null);
+  const [isDuplicateEmail, setIsDuplicateEmail] = useState(null);  // 중복 여부 상태
   const [showPwd, setShowPwd] = useState(false);
   const navigate = useNavigate();
 
-  const email = watch("email"); // 이메일 값을 추적
-  const nickname = watch("nickname"); // 닉네임 값을 추적
-  const pwd = watch("password"); // 비밀번호 값을 추적
+  const nicknameCheck = async () => {
+    const nickname = watch("nickname"); 
+     if (nickname) {
+      try {
+        const response = await axiosInstance.post(
+          `members/signup/email-check`,
+          { nickname }
+        );
+
+        if (response.data.status === 200) {
+          alert('사용 가능한 닉네임입니다.');
+          setIsDuplicateNickname(true);
+        } else if (response.data.status === 400) {
+          alert('사용할 수 없는 닉네임입니다.');
+          setFocus('nickname');
+          setIsDuplicateNickname(false);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  };
+
+  const emailCheck = async () => {
+    const email = watch("email"); // 이메일 값을 추적
+     if (email) {
+      try {
+        const response = await axiosInstance.post(
+          `members/signup/email-check`,
+          { email }
+        );
+
+        if (response.data.status === 200) {
+          alert('사용 가능한 이메일입니다.');
+          setIsDuplicateEmail(true);
+        } else if (response.data.status === 400) {
+          alert('사용할 수 없는 이메일입니다.');
+          setFocus('email');
+          setIsDuplicateEmail(false);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  };
+
+  const pwd = watch("password"); 
 
   function togglePwdVisibility() {
     setShowPwd((prev) => !prev);
@@ -28,22 +72,17 @@ function SignUp() {
     navigate('../SignIn');
   }
 
-  // const nicknameCheck = () => {
-
-  // }fetch("/nicknameCheck?")
-  // .then(  res => res.text() )
-  // .then( result => {
-  //   console.log(``)
-
-  // })
-
-
   const onSubmit = async (data) => {
-    if (isDuplicateEmail || isDuplicateNickname) {
-      // 중복이 있을 경우 제출하지 않음
-      console.log("중복 확인이 필요합니다.");
+    if (isDuplicateEmail) {
+      alert("이메일 중복 확인이 필요합니다.");
       return;
     }
+  
+    if (isDuplicateNickname) {
+      alert("닉네임 중복 확인이 필요합니다.");
+      return;
+    }
+
     try {
       const response = await axios.post(
         `https://8d80-210-206-96-219.ngrok-free.app/api/users`,
@@ -81,32 +120,13 @@ function SignUp() {
       }
     }
   };
-
-
-  
-
-  // const handleDuplicateCheck = async (field, value) => {
-  //   if (!value) return; // 빈 값이면 요청 안 보냄
-  
-  //   try {
-  //     const response = await axios.post("https://8d80-210-206-96-219.ngrok-free.app/api/check-duplicate", { [field]: value });
-  //     if (response.data.isDuplicate) {
-  //       setError(field, { type: "manual", message: `${field} is already taken` });
-  //     } else {
-  //       clearErrors(field);
-  //     }
-  //   } catch (error) {
-  //     console.error("중복 확인 오류:", error);
-  //   }
-  // };
-
   
   return (
     <main className="main sub_main">
       <div className="sign_up_wrap">
         <h2>Sign up</h2>
         <div className="sign_up_cont">
-          <form onSubmit={handleSubmit(onSubmit)} id='form_sign_up'>
+          <form onSubmit={handleSubmit(onSubmit)} id='form_sign_up' method='post'>
             <h3>Create your account</h3>
             <p>Please enter your account</p>
 
@@ -169,8 +189,10 @@ function SignUp() {
                 />
                 <button className='duplicate_btn'
                  type="button"
-                ><img src={checkIcon} alt='닉네임 중복체크'/>Duplicate check</button>
-                 {setIsDuplicateNickname && <p>Nickname is already taken.</p>}
+                ><img src={checkIcon} alt='닉네임 중복체크' onClick={nicknameCheck}/>Duplicate check</button>
+                 {isDuplicateNickname === false && (
+                  <p className="error">Nickname is already taken.</p>
+                )}
                </div>
                {errors.nickName && <p className="error">{errors.nickName.message}</p>}
            </div>
@@ -188,9 +210,11 @@ function SignUp() {
                     })}
                     />
                     
-                    <button className='duplicate_btn' type="button"><img src={checkIcon} alt='이메일 중복체크'
+                    <button className='duplicate_btn' type="button" onClick={emailCheck}><img src={checkIcon} alt='이메일 중복체크'
                     />Duplicate check</button>
-                     {setIsDuplicateEmail && <p>email is already taken.</p>}
+                     {isDuplicateEmail === false && (
+                      <p className="error">Email is already taken.</p>
+                    )}
                </div>
                {errors.email && <p className="error">{errors.email.message}</p>}
            </div>
