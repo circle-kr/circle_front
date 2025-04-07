@@ -20,7 +20,7 @@ function SignUp() {
   const nicknameCheck = async () => {
     const nickname = watch("nickName"); 
     try {
-      const response = await axiosInstance.post("members/signup/nickname-check", { nickname });
+      const response = await axiosInstance.post("/api/users", { nickname });
 
       if (response.data.status === 200) {
         alert("사용 가능한 닉네임입니다.");
@@ -38,7 +38,7 @@ function SignUp() {
   const emailCheck = async () => {
     const email = watch("email"); 
     try {
-      const response = await axiosInstance.post("members/signup/email", { email });
+      const response = await axiosInstance.post("/api/users", { email });
 
       if (response.data.status === 200) {
         alert("사용 가능한 이메일입니다.");

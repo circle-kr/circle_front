@@ -1,14 +1,17 @@
 import React from 'react'
 import '../SignIn.css'
+import axios from 'axios';
+import { useForm } from 'react-hook-form';
 import KakaoSignIn from './KakaoSignIn'
 import NaverSignIn from './NaverSignIn';
 import GoogleSignIn from './GoogleSignIn';
 import {  useNavigate } from 'react-router-dom';
 
 function SignIn() {
-    const handleSubmitSignin = (e) => {
-        e.preventDefault(); // 폼 제출 방지
-        console.log('Form submitted'); // 필요 시 추가 로직 작성
+    const { register, handleSubmit, formState: { errors } } = useForm({ mode: 'onChange' });
+    const onSubmit = (e) => {
+        e.preventDefault(); 
+        console.log('Form submitted'); 
       };
 
       const Navigate = useNavigate()
@@ -21,11 +24,38 @@ function SignIn() {
         <div className='sign_in_wrap'>
             <h2>Sign in</h2>
             <div className='sign_in_cont'>
-                <form onSubmit={handleSubmitSignin}>
+                <form onSubmit={handleSubmit(onSubmit)}>
                     <h3>welcome to join circle !</h3>
                     <p className='account'>please enter your account</p>
-                    <p><input type="text" name="" id="" placeholder='please enter your account'/></p>
-                    <p><input type="text" name="" id="" /></p>
+                    <p className='label'>
+                    <label htmlFor="email">Email</label>
+                        <input type="text" 
+                                id="email" 
+                                placeholder='please enter your account'
+                                {...register('email', {
+                                    required: "email is required",
+                                    pattern: {
+                                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                      message: "Please enter a valid email format.",
+                                    },
+                                })}
+                        />
+                    </p>
+                    {errors.email && <p className="error">{errors.email.message}</p>}
+                    <p className='label'>
+                    <label htmlFor="password">password</label>
+                        <input type="text"
+                              id="password"
+                              {...register("password", {
+                                required: "password is required",
+                                pattern: {
+                                    value: /^.{4,12}$/,
+                                    message: "Password must be 4–12 characters."
+                                }
+                              })} 
+                        />
+                    </p>
+                    {errors.password && <p className="error">{errors.password.message}</p>}
                     <p><button className='sign_in_btn' type='submit'>Sign in</button></p>
 
                     <div className='account_method'>
