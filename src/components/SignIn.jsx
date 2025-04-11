@@ -1,24 +1,36 @@
-import React from 'react'
-import '../SignIn.css'
 import axios from 'axios';
+import '../SignIn.css'
+import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import KakaoSignIn from './KakaoSignIn'
 import NaverSignIn from './NaverSignIn';
 import GoogleSignIn from './GoogleSignIn';
-import {  useNavigate } from 'react-router-dom';
 
 function SignIn() {
     const { register, handleSubmit, formState: { errors } } = useForm({ mode: 'onChange' });
-    const onSubmit = (e) => {
-        e.preventDefault(); 
-        console.log('Form submitted'); 
-      };
+    const Navigate = useNavigate()
 
-      const Navigate = useNavigate()
-
-      function signUpClick(){
-        Navigate('../SignUp')
+    const onSubmit =  async ({email, password}) => {
+      console.log('폼 데이터:', { email, password }); 
+      try {
+        const res = await axios.post('/api/login', { email, password }, {
+          withCredentials: true,
+        });
+    
+        const { refreshToken } = res.data;
+        localStorage.setItem('refreshToken', refreshToken);
+        console.log('로그인 성공');
+        Navigate('/'); 
+      } catch (e) {
+        console.error('로그인 실패', e);
       }
+    };
+
+    function signUpClick(){
+      Navigate('../SignUp')
+    }
+    
     return(
     <main className='main sub_main'>
         <div className='sign_in_wrap'>
@@ -44,7 +56,7 @@ function SignIn() {
                     {errors.email && <p className="error">{errors.email.message}</p>}
                     <p className='label'>
                     <label htmlFor="password">password</label>
-                        <input type="text"
+                        <input type="password"
                               id="password"
                               {...register("password", {
                                 required: "password is required",
@@ -66,9 +78,9 @@ function SignIn() {
                     </div>
                     
                     <div className='sign_in_type'>
-                    <GoogleSignIn />
-                    <KakaoSignIn />
-                    <NaverSignIn />
+                        <GoogleSignIn />
+                        <KakaoSignIn />
+                        <NaverSignIn />
                     </div>
                     <p className='resigister_go'>Not a account? <span onClick={signUpClick}> Resigiter now</span></p>
                 </form>
