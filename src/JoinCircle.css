@@ -216,7 +216,7 @@ section>div{
      bottom: 0;  
 }
 
-section>div>h3{
+.join_circle_cont section>div>h3{
     display: flex;
     align-items: center;
     font-size: 28px;

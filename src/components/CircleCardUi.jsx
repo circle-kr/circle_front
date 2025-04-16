@@ -3,7 +3,7 @@ import peopleIcon from '../images/people_icon.svg';
 import likeIcon from '../images/favorite_black_icon.svg';
 import unLikeIcon from '../images/favorite_stroke_black_icon.svg';
 
-const CircleCardUi = ({ title, intro, number, liked, onToggleLike }) => {
+function CircleCardUi({ title, intro, number, liked, onToggleLike }){
     return (
         <div className='main_row_01'>
             <h4>{title}</h4>

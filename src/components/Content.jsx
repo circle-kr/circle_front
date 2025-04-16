@@ -89,11 +89,12 @@ function Content() {
 
                 <section className='category_wrap'>
                     {categories.map((category, index) => (
-                        <div className={`category_top ${isSelectedCategory === category.name ? 'box_shadow' : ''}`}
+                        <div className='category_top'
                         key={index}
                         onClick={()=>{handleCategoryChange(category.name)}}
                     >
                         <button type='button'
+                        className={isSelectedCategory === category.name ? 'box_shadow' : ''}
                         >{category.name}</button>
                     </div>))}
                 </section>
@@ -106,6 +107,7 @@ function Content() {
                     <div className='main_circle_cont'>
                         { populars.map((circle, index) => (
                             <CircleCardUi
+                                className="circle_ui"
                                 key={index}
                                 title={circle.title}
                                 intro={circle.intro}
@@ -113,7 +115,7 @@ function Content() {
                                 liked={likedCircles.popular[circle.title]}
                                 onToggleLike={() => handleFavoriteToggle('popular', circle.title)}
                             />
-                    ))}
+                        ))}
                     </div>
                 </section> 
 
@@ -125,6 +127,7 @@ function Content() {
                     <div className='all_circle_cont'>
                         { alls.map((circle, index) => (
                             <CircleCardUi
+                                className="circle_ui"
                                 key={index}
                                 title={circle.title}
                                 intro={circle.intro}

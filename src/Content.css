@@ -90,8 +90,7 @@
 }
 
 .box_shadow{
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0) !important;
-    color: #fff !important;
+    box-shadow: 1px 1px 10px rgba(226, 226, 226, 0.8) !important;
 }
 
 .category_top:nth-of-type(4n+1){
@@ -141,7 +140,6 @@
 }
 
 .main_circle_cont>div{
-    margin-right: 20px;
     padding: 20px;
     width: 22%;
     box-sizing: border-box;
@@ -224,7 +222,6 @@
 }
 
 .all_circle_cont>div{
-    margin-right: 20px;
     padding: 20px;
     width: 22%;
     box-sizing: border-box;
@@ -237,7 +234,6 @@
 .all_circle_cont{
     margin-bottom: 60px;
     display: flex;
-    margin-right: 20px;
     justify-content: space-between;
     flex-wrap: wrap;
 }
