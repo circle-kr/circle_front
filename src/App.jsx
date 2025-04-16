@@ -4,6 +4,7 @@ import { AuthProvider } from './context/AuthContext';
 import './App.css';
 import Header from './components/Header';
 import Content from './components/Content';
+import CircleCardUi from './components/CircleCardUi';
 import SideMenu from './components/SideMenu';
 import Footer from './components/Footer';
 import JoinCircle from './components/JoinCircle'
@@ -36,6 +37,7 @@ function App() {
             <SideMenu collapsed={collapsed} />
             <Routes>
               <Route path="/" element={<Content />} />
+              <Route path="/CircleCardUi" element={<CircleCardUi />} />
               <Route path="/Joincircle" element={<JoinCircle />} />
               <Route path="/MakeCircle" element={<MakeCircle />} />
               <Route path="/JoinedCircle01" element={<JoinedCircle01 />} />

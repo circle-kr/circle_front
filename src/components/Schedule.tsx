@@ -42,10 +42,7 @@ const Schedule: React.FC = () => {
   const handleEventClick = (info: EventInput) => {
     console.log("Cliquei no evento de: ", info.event);
   }
-
-
  
-
   return (
     
     <div className="schedule_wrap">

@@ -1,18 +1,69 @@
 import React, { useState } from 'react'
 import '../Content.css'
+import CircleCardUi from '../components/CircleCardUi'
 import arrowDownIcon from '../images/arrow_drop_down_icon.svg'
 import arrowRightIcon from '../images/keyboard_arrow_right_icon.svg'
-import peopleIcon from '../images/people_icon.svg'
-import favoriteStrokeIcon from '../images/favorite_stroke_icon.svg'
+
 function Content() {
+    const [ isSelectedCategory, setIsSelectedCategory ] = useState('music');
+    const [likedCircles, setLikedCircles] = useState({
+        popular: {},
+        all: {},
+    });
 
-    const [activeCategory,setActiveCategory] = useState('')
-    const [categorytBtn,setCategoryBtn] = useState('')
+    const handleFavoriteToggle = (type, circleTitle) => {
+        setLikedCircles(prev => ({
+            ...prev,
+            [type]: {
+                ...prev[type],
+                [circleTitle]: !prev[type][circleTitle]
+            }
+        }));
+    };
 
-    function handleCategoryChange(category){
-        setActiveCategory(category)
-        setCategoryBtn(category)
+    const handleCategoryChange = (categoryName) => {
+       setIsSelectedCategory(categoryName);
+       console.log(categoryName);
     }
+
+    const categories = [
+        { name : "music" },
+        { name : "shopping" },
+        { name : "food" },
+        { name : "baking" },
+        { name : "book" },
+        { name : "sport" },
+        { name : "game" },
+        { name : "DIY" },
+        { name : "language" },
+        { name : "media" },
+        { name : "photo" },
+        { name : "animation" },
+        { name : "exhibition" },
+        { name : "casual" }
+    ]
+
+    const populars = [
+        { title : "enhypen", intro : "korean boy group", number : "7 / 7" },
+        { title : "heeseung", intro : "main vocal", number : "25" },
+        { title : "jay", intro : "lead vocal", number : "24" },
+        { title : "jake", intro : "sub vocal", number : "24" },
+        { title : "sunghoon", intro : "visual", number : "24" },
+        { title : "sunoo", intro : "sub vocal", number : "23" },
+        { title : "jungwon", intro : "leader", number : "22" },
+        { title : "niki", intro : "dance", number : "21" },
+    ]
+
+    const alls = [
+        { title : "enhypen", intro : "korean boy group", number : "7 / 7" },
+        { title : "1", intro : "e", number : "" },
+        { title : "2", intro : "", number : "" },
+        { title : "3", intro : "", number : "" },
+        { title : "4", intro : "", number : "" },
+        { title : "5", intro : "e", number : "e" },
+        { title : "6", intro : "", number : "" },
+        { title : "7", intro : "", number : "" },
+    ]
 
     return(
     <main className='main join_circle_main'>
@@ -37,100 +88,32 @@ function Content() {
                 </div>
 
                 <section className='category_wrap'>
-                    <div className='category_top'>
-                        <button type='button' className={`category_01 ${activeCategory === 'category_01' ? 'active' : ''}`}
-                        onClick={() => handleCategoryChange('category_01')}>music</button>
-                        <button type='button' className={`category_01 ${activeCategory === 'category_02' ? 'active' : ''}`} 
-                        onClick={() => handleCategoryChange('category_02')}>shopping</button>
-                        <button type='button' className={`category_01 ${activeCategory === 'category_03' ? 'active' : ''}`} 
-                        onClick={() => handleCategoryChange('category_03')}>food</button>
-                        <button type='button' className={`category_01 ${activeCategory === 'category_04' ? 'active' : ''}`} 
-                        onClick={() => handleCategoryChange('category_04')}>baking</button>
-                        <button type='button' className={`category_01 ${activeCategory === 'category_05' ? 'active' : ''}`} 
-                        onClick={() => handleCategoryChange('category_05')}>book</button>
-                        <button type='button' className={`category_01 ${activeCategory === 'category_06' ? 'active' : ''}`} 
-                        onClick={() => handleCategoryChange('category_06')}>sport</button>
-                        <button type='button' className={`category_01 ${activeCategory === 'category_07' ? 'active' : ''}`} 
-                        onClick={() => handleCategoryChange('category_07')}>game</button>
-                        <button type='button' className={`category_01 ${activeCategory === 'category_08' ? 'active' : ''}`} 
-                        onClick={() => handleCategoryChange('category_08')}>DIY</button>
-                    </div>
-                    <div className='category_bottom'>
-                        <button type='button' className={`category_01 ${activeCategory === 'category_09' ? 'active' : ''}`}
-                         onClick={() => handleCategoryChange('category_09')}>language</button>
-                        <button type='button' className={`category_01 ${activeCategory === 'category_10' ? 'active' : ''}`}
-                         onClick={() => handleCategoryChange('category_10')}>media</button>
-                        <button type='button' className={`category_01 ${activeCategory === 'category_11' ? 'active' : ''}`}
-                         onClick={() => handleCategoryChange('category_11')}>photo</button>
-                        <button type='button' className={`category_01 ${activeCategory === 'category_12' ? 'active' : ''}`}
-                         onClick={() => handleCategoryChange('category_12')}>animation</button>
-                        <button type='button' className={`category_01 ${activeCategory === 'category_13' ? 'active' : ''}`}
-                         onClick={() => handleCategoryChange('category_13')}>exhibition</button>
-                        <button type='button' className={`category_01 ${activeCategory === 'category_14' ? 'active' : ''}`}
-                         onClick={() => handleCategoryChange('category_14')}>casual</button>
-                    </div>
+                    {categories.map((category, index) => (
+                        <div className={`category_top ${isSelectedCategory === category.name ? 'box_shadow' : ''}`}
+                        key={index}
+                        onClick={()=>{handleCategoryChange(category.name)}}
+                    >
+                        <button type='button'
+                        >{category.name}</button>
+                    </div>))}
                 </section>
 
                 <section className='main_circle_wrap'>
                     <div className='main_circle_field'>
-                        <h3>{setActiveCategory}</h3>
+                        <h3>{isSelectedCategory}</h3>
                     </div>
 
                     <div className='main_circle_cont'>
-                        <div className='main_row_01'>
-                            <div>
-                                <h4>Enhypen</h4>
-                                <p className='circle_intro'>7명의 뱀파이어 소년들</p>
-                                <p className='people_num'><img src= {peopleIcon} alt="인원수" />7 / 7</p>
-                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
-                            </div>
-                            <div>
-                                <h4></h4>
-                                <p className='circle_intro'></p>
-                                <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
-                            </div>
-                            <div>
-                                <h4></h4>
-                                <p className='circle_intro'></p>
-                                <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
-                            </div>
-                            <div>
-                                <h4></h4>
-                                <p className='circle_intro'></p>
-                                <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
-                            </div>
-                        </div>
-
-
-                        <div className='main_row_02'>
-                            <div>
-                                <h4></h4>
-                                <p className='circle_intro'></p>
-                                <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
-                            </div>
-                            <div>
-                                <h4></h4>
-                                <p className='circle_intro'></p>
-                                <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
-                            </div>
-                            <div>
-                                <h4></h4>
-                                <p className='circle_intro'></p>
-                                <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
-                            </div>
-                            <div>
-                                <h4></h4>
-                                <p className='circle_intro'></p>
-                                <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
-                            </div>
-                        </div>
+                        { populars.map((circle, index) => (
+                            <CircleCardUi
+                                key={index}
+                                title={circle.title}
+                                intro={circle.intro}
+                                number={circle.number}
+                                liked={likedCircles.popular[circle.title]}
+                                onToggleLike={() => handleFavoriteToggle('popular', circle.title)}
+                            />
+                    ))}
                     </div>
                 </section> 
 
@@ -140,59 +123,16 @@ function Content() {
                     </div>
 
                     <div className='all_circle_cont'>
-                    <div className='all_row_01'>
-                            <div>
-                                <h4></h4>
-                                <p className='circle_intro'></p>
-                                <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
-                            </div>
-                            <div>
-                                <h4></h4>
-                                <p className='circle_intro'></p>
-                                <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
-                            </div>
-                            <div>
-                                <h4></h4>
-                                <p className='circle_intro'></p>
-                                <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
-                            </div>
-                            <div>
-                                <h4></h4>
-                                <p className='circle_intro'></p>
-                                <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
-                            </div>
-                        </div>
-
-                        <div className='all_row_02'>
-                            <div>
-                                <h4></h4>
-                                <p className='circle_intro'></p>
-                                <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
-                            </div>
-                            <div>
-                                <h4></h4>
-                                <p className='circle_intro'></p>
-                                <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
-                            </div>
-                            <div>
-                                <h4></h4>
-                                <p className='circle_intro'></p>
-                                <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
-                            </div>
-                            <div>
-                                <h4></h4>
-                                <p className='circle_intro'></p>
-                                <p className='people_num'><img src= {peopleIcon} alt="인원수" /> </p>
-                                <button className='like_circle'><img src={favoriteStrokeIcon} alt="찜하기" /></button>
-                            </div>
-                        </div>
+                        { alls.map((circle, index) => (
+                            <CircleCardUi
+                                key={index}
+                                title={circle.title}
+                                intro={circle.intro}
+                                number={circle.number}
+                                liked={likedCircles.all[circle.title]}
+                                onToggleLike={() => handleFavoriteToggle('all', circle.title)}
+                            />
+                        ))}
                     </div>
                 </section>
             </div>
