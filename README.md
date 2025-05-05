@@ -9,7 +9,7 @@
 
 ## ⚙️ 개발 환경
 - **Frontend**: HTML5, CSS3, JavaScript, React, TypeScript
-- **Backend**: Node.js, MongoDB (협업)
+- **Backend**: 협업 중인 개발자 친구가 Node.js, Java, MySQL 환경에서 개발을 진행했습니다.
 - **협업 도구**: GitHub, Notion
 
 ## 👥 프로젝트 소개 및 역할 분담
