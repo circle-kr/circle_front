@@ -1,46 +1,40 @@
-### circle 프로젝트 (팀작업)
+# 🌐 Circle – 외국인 유학생을 위한 커뮤니티 플랫폼
 
-#### 📆 프로젝트 기간 : 2024.11.- ing
+## 📆 프로젝트 기간
+2024.11 ~ 진행 중
 
-#### 🎯 개발 목표
-> 1. 외국인 친화적인 커뮤니티 웹/앱 개발
-> 2. 프론트엔드 / 백엔드 업무 분담 협업 개발
+## 🎯 개발 목표
+- 외국인 친화적인 커뮤니티 웹/앱 개발
+- 프론트엔드 & 백엔드 협업 경험을 통한 실무 감각 향상
 
-   
-#### ⚙️ 개발 환경 : html5, css3, javascript, react, typescript
+## ⚙️ 개발 환경
+- **Frontend**: HTML5, CSS3, JavaScript, React, TypeScript
+- **Backend**: Node.js, MongoDB (협업)
+- **협업 도구**: GitHub, Notion
 
-#### 👥 협업 도구 : github, notion
+## 👥 프로젝트 소개 및 역할 분담
+본 프로젝트는 외국인 유학생들이 한국 내 커뮤니티 환경에 적응하기 어려운 문제를 해결하고자 기획된 웹 기반 커뮤니티 서비스입니다.  
+관심사 기반으로 소모임을 만들고 참여할 수 있는 구조로, 언어와 문화의 장벽을 낮추는 데 중점을 두었습니다.
 
-#### 프로젝트 소개 및 역할 분담
-본 프로젝트는 **프론트엔드(React)와 백엔드(Node.js, MongoDB)**로 구성되었으며, 백엔드 개발은 협업 중인 개발자 친구와 역할을 분담하여 진행하고 있습니다. 
-저는 프론트엔드 전반을 담당하며, axios를 활용한 REST API 연동, 사용자 친화적인 UI 구현, 관심사 기반 데이터 구조 설계 등을 중심으로 개발을 진행하고 있습니다.
+프론트엔드 전반을 담당하여 다음과 같은 업무를 수행하고 있습니다:
+- 사용자 친화적인 UI 구성 및 컴포넌트 구조 설계
+- `axios`를 활용한 REST API 연동
+- 관심사 기반 데이터 흐름 구성
+- TypeScript 및 React Hook 기반 유효성 검사 구조 설계
 
+## 🔗 배포 주소
+- [배포 링크](https://sohyun32253.github.io/Circle/) *(수정 필요시 알려줘!)*
 
-#### 배포 주소 :  https://sohyun32253.github.io/Gongcha/
+## 🗂 기획 문서
+- [Notion 기획서 바로가기](https://www.notion.so/13de201be1ac802db3dcd9ea3f821192?pvs=4)  
+*(또는 Google Slides 사용 시 올바른 링크 공유)*
 
+## 🚀 주요 기능
+- REST API 기반 로그인 / 회원가입 기능
+- 실시간 유효성 검사 (React Hook Form)
+- FullCalendar 기반 스케줄 기능 (UI 구현 완료)
+- Sidebar 토글 기능 구현 (react-pro-sidebar)
 
-#### 기획서 링크 : https://docs.google.com/presentation/d/1fqL8HC99VYc21IRYkY7RmP6n1_zODk4DQ60MtMVKbjA/edit?usp=sharing](https://www.notion.so/13de201be1ac802db3dcd9ea3f821192?pvs=4)
-
-
-#### 주요 기능 소개:
-> - REST API 기반 로그인 / 회원가입 기능
-> - 실시간 유효성 검사 (React Hook Form)
-> - FullCalendar 기반 스케줄 기능 (UI 구현 완료)
-> - 사이드바 토글 기능 (react-pro-sidebar)
-
-
-
-###### 평가 및 느낀점
-그동안 정식적인 팀작업을 한 경험이 없었는데 이번 기회에 경험해 볼 수 있어서 좋았고, 백엔드 데이터 요청하는 방법과 소통하는 방법과 같은 
-실무에서 중요한 사항들을 간접 체험할 수 있어서 굉장히 유익한 시간이었습니다.
-
----
-![메인_pc](https://github.com/user-attachments/assets/daae62e3-25c6-45df-9202-aa554c664c87)
-
-![공차서브](https://github.com/user-attachments/assets/27d42036-31a2-4cc0-9b6a-513c293d3263)
-
-
-
-
-
-
+## ✍️ 느낀 점
+정식 팀 프로젝트 경험은 처음이었지만, 백엔드와의 협업 과정에서 API 명세를 기반으로 한 데이터 요청, 역할 분배, Git 협업 등의 과정을 직접 체험해보며 많은 인사이트를 얻을 수 있었습니다.  
+실무와 가까운 흐름을 이해할 수 있었고, 다양한 UI 라이브러리와 React 기능을 활용하면서 프론트엔드 개발자로서의 자신감을 키울 수 있는 소중한 경험이었습니다.
