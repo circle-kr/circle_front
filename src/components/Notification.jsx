@@ -5,7 +5,7 @@ import moreIcon from '../images/more_icon.svg'
 function Notification() {
     const navigate = useNavigate();
     const requestList = (type) => {
-        navigate('/RequestPopUp',  { state: { type } }); // 한 번에 하나만 전달
+        navigate('/RequestPopUp',  { state: { type } }); 
     }
     const notices = [
         {

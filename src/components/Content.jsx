@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import '../Content.css'
+import { populars } from '../mock/content';
 import CircleCardUi from '../components/CircleCardUi'
 import arrowDownIcon from '../images/arrow_drop_down_icon.svg'
 import arrowRightIcon from '../images/keyboard_arrow_right_icon.svg'
@@ -41,28 +42,6 @@ function Content() {
         { name : "animation" },
         { name : "exhibition" },
         { name : "casual" }
-    ]
-
-    const populars = [
-        { title : "enhypen", intro : "korean boy group", number : "7 / 7" },
-        { title : "heeseung", intro : "main vocal", number : "25" },
-        { title : "jay", intro : "lead vocal", number : "24" },
-        { title : "jake", intro : "sub vocal", number : "24" },
-        { title : "sunghoon", intro : "visual", number : "24" },
-        { title : "sunoo", intro : "sub vocal", number : "23" },
-        { title : "jungwon", intro : "leader", number : "22" },
-        { title : "niki", intro : "dance", number : "21" },
-    ]
-
-    const alls = [
-        { title : "enhypen", intro : "korean boy group", number : "7 / 7" },
-        { title : "1", intro : "e", number : "" },
-        { title : "2", intro : "", number : "" },
-        { title : "3", intro : "", number : "" },
-        { title : "4", intro : "", number : "" },
-        { title : "5", intro : "e", number : "e" },
-        { title : "6", intro : "", number : "" },
-        { title : "7", intro : "", number : "" },
     ]
 
     return(
@@ -125,7 +104,7 @@ function Content() {
                     </div>
 
                     <div className='all_circle_cont'>
-                        { alls.map((circle, index) => (
+                        { populars.map((circle, index) => (
                             <CircleCardUi
                                 className="circle_ui"
                                 key={index}

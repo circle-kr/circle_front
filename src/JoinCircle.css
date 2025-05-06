@@ -153,7 +153,7 @@ section>div{
     height: 230px;
     position: absolute;
     z-index: 10;
-    top: 80px;
+    top: 21%;
     left: 0;
     backdrop-filter: blur(3px);
     background-color: rgba(184, 126, 238, 0.8);

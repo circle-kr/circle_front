@@ -7,7 +7,6 @@ const kakaoURL = `https://kauth.kakao.com/oauth/authorize?client_id=${K_REST_API
 
 const KakaoSignIn = () => {
   const handleKakaoLogin = () => {
-    // 카카오 로그인 URL로 이동
     window.location.href = kakaoURL;
   };
 
@@ -23,9 +22,9 @@ const KakaoSignIn = () => {
       const top = (window.innerHeight - height) / 2;
 
       window.open(
-        kakaoURL, // 카카오 로그인 URL
-        '_blank', // 새 창으로 열기
-        `width=${width},height=${height},top=${top},left=${left}` // 팝업 창 크기와 위치 설정
+        kakaoURL, 
+        '_blank', 
+        `width=${width},height=${height},top=${top},left=${left}` 
       );
     }}
   >

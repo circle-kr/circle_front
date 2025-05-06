@@ -93,7 +93,7 @@ function SignUp() {
 
       if (response.status === 201) {
         alert('회원가입 성공!');
-        navigate('/SignIn'); // 회원가입 후 로그인 페이지로 이동
+        navigate('/SignIn'); 
       }
     } catch (error) {
       console.error('회원가입 오류:', error);
@@ -230,5 +230,4 @@ function SignUp() {
     </main>
   );
 }
-
 export default SignUp;

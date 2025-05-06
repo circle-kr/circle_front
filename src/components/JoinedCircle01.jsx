@@ -26,7 +26,7 @@ function JoinedCircle01() {
     }
 
     const morePopUpClick = (event) => {
-        event.stopPropagation(); // 이벤트 버블링 방지
+        event.stopPropagation(); 
         setIsMoreVisible(!isMoreVisible)
     }
 
@@ -35,27 +35,22 @@ function JoinedCircle01() {
       }
 
     const popupRef = useRef(null);
-    // 팝업 외부 클릭 시 팝업 닫기
+  
 
   useEffect(() => {
     const handleClickOutside = (event) => {
         console.log("부모")
-        setTimeout(() => closePopup(), 0); // 0ms 딜레이 후 실행
+        setTimeout(() => closePopup(), 0);
       if (popupRef.current && !popupRef.current.contains(event.target)) {
-        closePopup(); // 외부 클릭 시 팝업 닫기
+        closePopup(); 
       }
     };
-
-    // 이벤트 리스너 추가
     document.addEventListener('click', handleClickOutside);
 
-    // 클린업 함수
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
   }, []);
-
-  
 
     const likedToggle = () => {
         setIsLiked(isLiked === unlikedIcon ? likedIcon : unlikedIcon )

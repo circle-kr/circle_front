@@ -19,7 +19,7 @@ const PostPopUp = forwardRef(({onClose},popupRef) => {
     })
 
     const handleClick = () => {
-        fileInputRef.current.click(); // 파일 업로드 input 클릭 트리거
+        fileInputRef.current.click(); 
       };
     
   return (
@@ -35,14 +35,12 @@ const PostPopUp = forwardRef(({onClose},popupRef) => {
         </div>
         
         <div className='popup_bottom'>
-             {/* 숨겨진 파일 업로드 input */}
             <input 
                 type="file" 
                 ref={fileInputRef} 
                 style={{ display: "none" }} 
             />
             
-            {/* 이미지 클릭 시 파일 업로드 실행 */}
             <img 
                 src={photoIcon} 
                 alt="사진 추가" 

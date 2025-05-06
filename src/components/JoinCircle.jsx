@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
 import '../JoinCircle.css'
+import { profiles, activities, joiner } from '../mock/joinCircle';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import strokeHeartIcon from '../images/favorite_stroke_icon.svg'
@@ -27,32 +28,7 @@ function JoinCircle() {
           autoplay: true,
           autoplaySpeed: 3000
         };
-
-        const profiles = [
-            { nickname: "user1", time: "12:30", text: "권력은 결코 뒷걸음치지 않는다 - 더 큰 권력 앞에서가 아니라면. 권력은 결코 뒷걸음치지 않는다 - 더 큰 권력 앞에서가 아니라면. 권력은 결코 뒷걸음치지 않는다 - 더 큰 권력 앞에서가 아니라면. 권력은 결코 뒷걸음치지 않는다 - 더 큰 권력 앞에서가 아니라면. 권력은 결코 뒷걸음치지 않는다 - 더 큰 권력 앞에서가 아니라면. 권력은 결코 뒷걸음치지 않는다 - 더 큰 권력 앞에서가 아니라면. 권력은 결코 뒷걸음치지 않는다 - 더 큰 권력 앞에서가 아니라면.", imgSrc: "" },
-            { nickname: "user2", time: "13:45", text: "contents", imgSrc: "" },
-            { nickname: "user3", time: "14:10", text: "contents", imgSrc: "" },
-            { nickname: "user4", time: "15:20", text: "contents", imgSrc: "" },
-            { nickname: "user5", time: "16:00", text: "contents", imgSrc: "" }
-          ];
-
-        const activities = [
-            { contents: "Jay has joined this club.", time: "1 hours ago", imgSrc: "" },
-            { contents: "Jay has joined this club.", time: "1 hours ago", imgSrc: "" },
-            { contents: "Jay has joined this club.", time: "1 hours ago", imgSrc: "" },
-            { contents: "Jay has joined this club.", time: "1 hours ago", imgSrc: "" }
-        ]
-
-        const joiner = [
-            { name: "Peter Parker", language: "English", major: "Business", imgSrc: "" },
-            { name: "Peter Parker", language: "English", major: "Business", imgSrc: "" },
-            { name: "Peter Parker", language: "English", major: "Business", imgSrc: "" },
-            { name: "Peter Parker", language: "English", major: "Business", imgSrc: "" },
-            { name: "Peter Parker", language: "English", major: "Business", imgSrc: "" },
-            { name: "Peter Parker", language: "English", major: "Business", imgSrc: "" },
-            { name: "Peter Parker", language: "English", major: "Business", imgSrc: "" },
-            { name: "Peter Parker", language: "English", major: "Business", imgSrc: "" }
-        ]
+        
     return(
     <main className='main sub_main'>
         <div className='join_circle_wrap'>
@@ -70,7 +46,7 @@ function JoinCircle() {
                                     charateristic
                                 </div>
                             </div>
-                            <p>contents</p>
+                            <p>wecome ! we make chill days~!</p>
                         </div>
                     </section>
                 

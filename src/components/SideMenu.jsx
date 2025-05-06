@@ -66,12 +66,8 @@ function SideMenu({collapsed}) {
                 <li>· 모임 3 <img src={arrowRightIcon} alt="이동하기" /></li>
               </ul>
           </div>
-          
         </Sidebar>      
-        
         </div>
-
-        
     )
 }
 export default SideMenu;

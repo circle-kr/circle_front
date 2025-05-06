@@ -9,7 +9,7 @@ import sendIcon from "../images/send_icon.svg";
 function ChatMessage() {
   const navigate = useNavigate();
   const [message, setMessage] = useState("");
-  const [messages, setMessages] = useState([]); // ✅ 로컬 메시지 상태
+  const [messages, setMessages] = useState([]); 
 
   const chatBackClick = () => {
     navigate(`/Chat`);
@@ -26,8 +26,8 @@ function ChatMessage() {
   const submitHandler = (event) => {
     event.preventDefault();
     if (message.trim() !== "") {
-      setMessages([...messages, message]); // ✅ 입력한 메시지 저장
-      setMessage(""); // ✅ 입력창 초기화
+      setMessages([...messages, message]); 
+      setMessage(""); 
     }
   };
 
@@ -47,13 +47,12 @@ function ChatMessage() {
                 <p className="user_name">
                   최유진 <img src={arrowRightIcon} alt="프로필 보기" />
                 </p>
-                <p className="user_id">eugene.yml</p>
+                <p className="user_id">hyun_wise</p>
               </div>
             </div>
             <div className="chat_message_middle">
               <p className="time_line">2024년 11월 24일 일요일</p>
-             
-              {/* ✅ 로컬 메시지 상태를 화면에 출력 */}
+    
               {messages.map((msg, index) => (
                 <div key={index} className="msg_container">
                   <div className="my_msg_box">
