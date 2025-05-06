@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import { AuthProvider } from './context/AuthContext';
 import './App.css';
@@ -7,31 +7,31 @@ import Content from './components/Content';
 import CircleCardUi from './components/CircleCardUi';
 import SideMenu from './components/SideMenu';
 import Footer from './components/Footer';
-import JoinCircle from './components/JoinCircle'
-import MakeCircle from './components/MakeCircle'
-import JoinedCircle01 from './components/JoinedCircle01'
-import JoinedCircle02 from './components/JoinedCircle02'
-import Notification from './components/Notification'
+import JoinCircle from './components/JoinCircle';
+import MakeCircle from './components/MakeCircle';
+import JoinedCircle01 from './components/JoinedCircle01';
+import JoinedCircle02 from './components/JoinedCircle02';
+import Notification from './components/Notification';
 import RequestPopUp from './components/RequestPopUp';
 import Chat from './components/Chat';
 import ChatMessage from './components/ChatMessage';
-import ProfileInfo from './components/ProfileInfo'
-import Profile from './components/Profile'
-import SignIn from './components/SignIn'
-import SignUp from './components/SignUp'
-import Schedule from './components/Schedule'
+import ProfileInfo from './components/ProfileInfo';
+import Profile from './components/Profile';
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
+import Schedule from './components/Schedule';
 import SchedulePopUp from './components/SchedulePopUp';
 
 function App() {
-  const [collapsed, setCollapsed] = useState(false); 
+  const [collapsed, setCollapsed] = useState(false);
   const toggleSidebar = () => {
-    setCollapsed(!collapsed); 
+    setCollapsed(!collapsed);
   };
 
   return (
     <AuthProvider>
       <div className="App">
-        <Router>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Header sidemenuToggle={toggleSidebar} />
           <div className="container">
             <SideMenu collapsed={collapsed} />
@@ -54,8 +54,8 @@ function App() {
               <Route path="/SchedulePopUp" element={<SchedulePopUp />} />
             </Routes>
           </div>
-          </Router>
-          <Footer />
+        </BrowserRouter>
+        <Footer />
       </div>
     </AuthProvider>
   );
