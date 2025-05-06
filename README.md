@@ -29,7 +29,7 @@
 - TypeScript 및 React Hook 기반 유효성 검사 구조 설계
 
 ## 🔗 배포 주소
-- [배포 링크](https://sohyun32253.github.io/Circle/) 
+- [배포 링크] https://circle-kr.github.io/circle_front/
 
 ## 🗂 기획 문서
 - [Notion 기획서 바로가기](https://www.notion.so/13de201be1ac802db3dcd9ea3f821192?pvs=4)  
