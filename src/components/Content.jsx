@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../Content.css'
 import { populars } from '../mock/content';
 import CircleCardUi from '../components/CircleCardUi'
@@ -6,6 +6,7 @@ import arrowDownIcon from '../images/arrow_drop_down_icon.svg'
 import arrowRightIcon from '../images/keyboard_arrow_right_icon.svg'
 
 function Content() {
+    
     const [ isSelectedCategory, setIsSelectedCategory ] = useState('music');
     const [likedCircles, setLikedCircles] = useState({
         popular: {},
@@ -44,6 +45,25 @@ function Content() {
         { name : "casual" }
     ]
 
+ 
+        const [isExpanded, setIsExpanded] = useState(false);
+        const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+      
+        useEffect(() => {
+            const handleResize = () => {
+              setIsMobile(window.innerWidth <= 768);
+            };
+            window.addEventListener('resize', handleResize);
+        
+            return () => window.removeEventListener('resize', handleResize);
+          }, []);
+        
+          const visibleCategories = isMobile && !isExpanded
+            ? categories.slice(0, 4)
+            : categories;
+        
+          const toggleExpanded = () => setIsExpanded(prev => !prev);
+   
     return(
     <main className='main join_circle_main'>
         <div className='join_circle_main_wrap'>
@@ -67,7 +87,7 @@ function Content() {
                 </div>
 
                 <section className='category_wrap'>
-                    {categories.map((category, index) => (
+                    {visibleCategories.map((category, index) => (
                         <div className='category_top'
                         key={index}
                         onClick={()=>{handleCategoryChange(category.name)}}
@@ -76,6 +96,10 @@ function Content() {
                         className={isSelectedCategory === category.name ? 'box_shadow' : ''}
                         >{category.name}</button>
                     </div>))}
+
+                    <button className="toggle_button" onClick={toggleExpanded}>
+                    {isExpanded ? '접기 ▲' : '펼치기 ▼'}
+      </button>
                 </section>
 
                 <section className='main_circle_wrap'>
