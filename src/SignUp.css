@@ -139,5 +139,6 @@
 
 #form_sign_up .error{
     margin-top: 0;
-    color: #796BD8;
+    color: red;
+    text-align: center;
 }

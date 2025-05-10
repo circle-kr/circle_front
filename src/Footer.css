@@ -26,3 +26,12 @@
     font-size: 14px;
 }
 
+@media screen and (max-width: 767px){
+    .footer_wrap{
+        padding: 0 40px;
+    }
+
+    .footer_cont{
+        width: 100%;
+    }
+}

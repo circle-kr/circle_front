@@ -40,6 +40,7 @@
     border-radius: 30px;
     border: none;
     outline: 2px solid #BEBEBE;
+    margin: 10px 0;
 }
 
 .sign_in_cont input:focus{
@@ -109,3 +110,14 @@
     cursor: pointer;
 }
 
+.sign_in_wrap .error{
+    color: red;
+    font-size: 14px;
+}
+
+.sign_in_wrap .label{
+    text-align: left;
+    color: #888282;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
