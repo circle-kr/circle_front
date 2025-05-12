@@ -60,7 +60,7 @@
 }
 
 .post_btn{
-    padding: 18px 44px;
+    padding: 14px 44px;
     box-sizing: border-box;
     background: #000;
     border-radius: 50px;
@@ -76,4 +76,19 @@
     background: #fefefe;
     color: #000;
     border: 2px solid #000;
+}
+
+@media screen and (max-width:767px){
+    .popup_top textarea{
+        font-size: 20px;
+    }
+
+    .post_close img{
+        width: 40px;
+        height: 40px;
+    }
+
+    .post_btn{
+        font-size: 20px;
+    }
 }

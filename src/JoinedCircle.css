@@ -42,7 +42,6 @@ section>div{
 
 .joined_circle_wrap .intro{
     background: #796BD8;
-    height: 260px;
 }
 
 .tag_wrap{
@@ -87,7 +86,6 @@ section>div{
 .sns_top{
     display: flex;
     align-items: center;
-    position: relative;
     margin-bottom: 30px;
 }
 
@@ -174,8 +172,8 @@ section>div{
 
 .top_btn_wrap{
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 140px;
+    right: 80px;
     display: flex;
     align-items: center;
 }
@@ -203,4 +201,44 @@ section>div{
 
 .comm_like{
     margin-left: 10px;
+}
+
+@media screen and (max-width:767px){
+    .tag_wrap>div{
+        display: block;
+        margin: 0 auto 10px;
+        text-align: center;
+        width: 200px;
+    }
+
+    .category_tag{
+        padding: 10px;
+    }
+
+    .charateristic_tag{
+        padding: 10px;
+    }
+
+    .top_btn_wrap{
+        position: static;
+        margin-bottom: 30px;
+    }
+
+    .sns_top h4{
+        font-size: 20px;
+        margin-left: 20px;
+    }
+
+    .follow{
+        font-size: 16px;
+        width: auto;
+        height: auto;
+        padding: 10px 14px;
+    }
+
+   .popup_wrap{
+        position: relative;
+        left: -20px;
+        width: 100%;
+   }
 }

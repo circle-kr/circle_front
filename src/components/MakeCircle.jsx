@@ -29,7 +29,7 @@ function MakeCircle() {
                     <section className='make_circle_name'>
                         <div className='make_circle_name_cont'>
                             <h3>① Make circle name</h3>
-                            <textarea id='name' rows="1" placeholder='Enter 20 characters or less'></textarea>
+                            <textarea id='name' rows="1" placeholder='Enter 20 characters or less' maxLength={20}></textarea>
                             <label htmlFor='name'></label>
                         </div>
                     </section>  
@@ -62,7 +62,7 @@ function MakeCircle() {
                     <section className='mc_notification'>
                         <div className='make_circle_notification_cont'>
                             <h3>④ Notification</h3>
-                            <textarea id='notification' rows="6" placeholder='Enter 200 characters or less' maxLength={200}></textarea>
+                            <textarea id='notification' rows="8" placeholder='Enter 200 characters or less' maxLength={200}></textarea>
                             <label htmlFor='notification'></label>
                         </div>
                     </section>

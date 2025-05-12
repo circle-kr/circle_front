@@ -125,10 +125,18 @@
     grid-row: 4 / 5;
 }
 
+.mc_notification textarea{
+    height: 280px;
+}
+
 .introduce_of_circle{
     background: #D0FD5E;
     grid-row: 3 / 5;
     grid-column: 3 / 4;
+}
+
+.introduce_of_circle textarea{
+    height: 560px;
 }
 
 .introduce_of_circle input{
@@ -164,5 +172,31 @@
     background: #fefefe;
 }
 
+@media screen and (max-width:767px){
+    .make_circle_wrap form{
+    display: block;
+}
+    section{
+        margin-bottom: 40px;
+    }
 
+    .logo_wrap{
+        position: relative;
+        top: 0;
+        left: 10%;
+        margin-bottom: 40px;
+    }
 
+    .make_circle_wrap{
+        height: auto;
+    }
+
+    .make_circle_wrap textarea{
+        height: auto;
+        overflow: hidden;
+    }
+
+    .mc_submit{
+        width: 100%;
+    }
+}

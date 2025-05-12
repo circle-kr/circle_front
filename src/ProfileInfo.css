@@ -74,3 +74,29 @@
 .follow_btn{
     margin-right: 20px;
 }
+
+@media screen and (max-width: 767px){
+    .user_profile{
+        padding: 40px;
+    }
+
+    .profile_info_cont .user_img{
+        width: 80px;
+        height: 80px;
+        top: -45px;
+    }
+    .profile_btn_wrap button{
+        font-size: 14px;
+        padding: 10px 14px;
+        width: auto;
+        height: auto;
+    }
+
+    .follow_btn{
+        margin-right: 10px;
+    }
+
+    .user_id{
+        font-size: 20px;
+    }
+}

@@ -10,7 +10,6 @@ import Footer from './components/Footer';
 import JoinCircle from './components/JoinCircle';
 import MakeCircle from './components/MakeCircle';
 import JoinedCircle01 from './components/JoinedCircle01';
-import JoinedCircle02 from './components/JoinedCircle02';
 import Notification from './components/Notification';
 import RequestPopUp from './components/RequestPopUp';
 import Chat from './components/Chat';
@@ -41,7 +40,6 @@ function App() {
               <Route path="/Joincircle" element={<JoinCircle />} />
               <Route path="/MakeCircle" element={<MakeCircle />} />
               <Route path="/JoinedCircle01" element={<JoinedCircle01 />} />
-              <Route path="/JoinedCircle02" element={<JoinedCircle02 />} />
               <Route path="/Notification" element={<Notification />} />
               <Route path="/RequestPopUp" element={<RequestPopUp />} />
               <Route path="/Chat" element={<Chat />} />

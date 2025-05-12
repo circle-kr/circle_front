@@ -86,7 +86,7 @@ function Profile() {
                 <div className='profile_bottom'>
                     <div className='profile_input'>
                             <div className='profile_bottom_01'>
-                                <label htmlFor='fn'>
+                                <label htmlFor='fn' className='label'>
                                     <span>First name</span>
                                     <input type="text" name="firstName" id="fn" placeholder='First name' 
                                     {...register("firstName", {
@@ -99,7 +99,7 @@ function Profile() {
                                     {errors.firstName && <p className="error">{errors.firstName.message}</p>}
                                 </label>
                             
-                                <label htmlFor='ln'>
+                                <label htmlFor='ln' className='label'>
                                     <span>Last name</span>
                                     <input type="text" name="lastName" id="ln" placeholder='Last name'
                                     {...register("lastName", {
@@ -112,7 +112,7 @@ function Profile() {
                                     {errors.lastName && <p className="error">{errors.lastName.message}</p>}
                                 </label>
                                 
-                                <label htmlFor='nn'>
+                                <label htmlFor='nn' className='label'>
                                     <span>Nick name</span>
                                     <input type="text" name="nickname" id="nn" placeholder='Nick name' 
                                     {...register("nickName",
@@ -131,7 +131,7 @@ function Profile() {
                             </div>
 
                             <div className='profile_bottom_02'>
-                                <label htmlFor='sc'>
+                                <label htmlFor='sc' className='label'>
                                     <span>School</span>
                                     <input type="text" name="school" id="sc" placeholder='School'
                                     {...register("school", {
@@ -144,7 +144,7 @@ function Profile() {
                                     {errors.school && <p className="error">{errors.school.message}</p>}
                                 </label>
 
-                                <label htmlFor='mj'>
+                                <label htmlFor='mj' className='label'>
                                     <span>Major</span>
                                     <input type="text" name="major" id="mj" placeholder='Major'
                                     {...register("major", {
@@ -159,7 +159,7 @@ function Profile() {
                             </div>
 
                             <div className='profile_bottom_03'>
-                                <label htmlFor='co'>
+                                <label htmlFor='co' className='label'>
                                     <span>Country</span>
                                     <input type="text" name="country" id="co" placeholder='Country'
                                     {...register("country", {
@@ -172,7 +172,7 @@ function Profile() {
                                     {errors.country && <p className="error">{errors.country.message}</p>}
                                 </label>
      
-                                <label htmlFor='la'>
+                                <label htmlFor='la' className='label'>
                                     <span>Language <span style={{"display" : "inline"}}>*multiple options available</span></span>
                                     <Select
                                     className='select'
@@ -187,7 +187,7 @@ function Profile() {
                             </div>
 
                             <div className='profile_bottom_04'>
-                                <label htmlFor='bio'>
+                                <label htmlFor='bio' className='label'>
                                     <span>Bio</span>
                                     <input type="text" name="bio" id="bio" placeholder='Bio'
                                     {...register("bio")}/>

@@ -99,3 +99,27 @@
     background: #222222;
     margin-right: 10px;
 }
+
+@media screen and (max-width:767px){
+    .follow_cont>h3{
+        margin-bottom: 20px;
+    }
+    
+    .sub_main .follow_cont>div{
+        padding: 20px 0;
+    }
+
+    .follow_btn_wrap{
+        display: flex;
+        position: absolute;
+        right: 0;
+    }
+
+    .follow_btn_wrap button{
+        font-size: 14px;
+        padding: 10px;
+        box-sizing: border-box;
+        width: auto;
+        height: auto;
+    }
+}

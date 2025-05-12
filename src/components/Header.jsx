@@ -12,6 +12,7 @@ function Header({ sidemenuToggle }){
     const mobileMenuToggle = () => {
         setIsMobileMenu(!isMobileMenu);
     }
+    
     return(
         <header className='header'>
             <div className='header_wrap'>

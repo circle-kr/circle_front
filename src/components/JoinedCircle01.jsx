@@ -102,10 +102,10 @@ function JoinedCircle01() {
                             <div className='sns_top'>
                                 <img src="" alt="" className='profile_img'/>
                                 <h4>nickname</h4>
-                                <div className='top_btn_wrap'>
-                                    <button className={`follow ${isFollowed ? 'fw_clicked' : ""}`} onClick={followToggle} key={isFollowed}>Follow</button>
-                                    <button onClick={morePopUpClick} className='sns_more'><img src={moreIcon} alt="" /></button>
-                                </div>
+                            </div>
+                            <div className='top_btn_wrap'>
+                                <button className={`follow ${isFollowed ? 'fw_clicked' : ""}`} onClick={followToggle} key={isFollowed}>Follow</button>
+                                <button onClick={morePopUpClick} className='sns_more'><img src={moreIcon} alt="" /></button>
                             </div>
 
                             <>

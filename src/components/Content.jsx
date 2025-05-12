@@ -45,7 +45,6 @@ function Content() {
         { name : "casual" }
     ]
 
- 
         const [isExpanded, setIsExpanded] = useState(false);
         const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
       

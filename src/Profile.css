@@ -148,4 +148,42 @@
     width: 100%;
 }
 
+@media screen and (max-width: 767px){
+    .profile_img{
+        width: 90px;
+        height: 90px;
+    }
+
+    .profile_top .camera_icon{
+        left: 60px;
+    }
+
+    .profile_top_btn{
+        right: 50px;
+        top: 10px;
+        display: block;
+    }
+
+    .profile_top_btn button{
+        margin-bottom: 10px;
+    }
+    
+
+    .profile_input>div{
+        display: block;
+        margin-bottom: 0;
+    }
+
+    .profile_input input{
+        margin-bottom: 20px;
+    }
+
+    .profile_input .select{
+        width: 300px;
+    }
+
+    .profile_bottom_04{
+        margin-bottom: 0 !important;
+    }
+}
 

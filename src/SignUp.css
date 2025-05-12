@@ -142,3 +142,23 @@
     color: red;
     text-align: center;
 }
+
+@media screen and (max-width: 767px){
+    .sign_up_cont form{
+        width: auto;
+    }
+
+    .d_flex{
+        display: block;
+    }
+
+    .sign_up_cont form .w_237{
+        width: 100%;
+ 
+    }
+
+    .duplicate_btn{
+        width: 100%;
+        margin-top: 10px;
+    }
+}
