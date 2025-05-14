@@ -40,12 +40,21 @@ h3{
   font-size: 32px;
 }
 
-p{font-size: 20px;}
+p{
+  font-size: 20px;
+}
 
 .container{
   width: 100%;
   display: flex;
 }
+
+/* .sub_main{
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px 40px 80px;
+  box-sizing: border-box;
+} */
 
 main{
   width: 1280px;
@@ -55,6 +64,7 @@ main{
 @media screen and (max-width: 767px){
   main{
     padding: 0 40px;
+    margin: 0;
   }
 
   h2{

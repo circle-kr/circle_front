@@ -30,7 +30,7 @@ function JoinCircle() {
         };
         
     return(
-    <main className='main sub_main'>
+    <main className='main sub_main grid_container'>
         <div className='join_circle_wrap'>
             <h2>Join circle <button onClick={handleHeartClick}><img src={clickHeart} alt="찜하기"/></button></h2>  
             <div className='join_circle_cont'>

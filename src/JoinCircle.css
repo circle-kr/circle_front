@@ -1,10 +1,13 @@
 .sub_main{
+    width: 100%;
+    max-width: 1200px;
     padding: 40px 40px 80px;
     box-sizing: border-box;
 }
 
 .join_circle_wrap{
     position: relative;
+    
 }
 
 .join_circle_wrap>div{
@@ -122,6 +125,7 @@ section>div{
     position: relative;
     width: 100%;
     height: 100%;
+    padding: 40px 40px 80px;
 }
 
 .go_community{
@@ -178,6 +182,8 @@ section>div{
     background: #666666;
     border-radius: 50px;
     margin-right: 10px;
+    position: relative;
+    z-index: 20;
 }
 
 .profile_prev dl{
@@ -203,7 +209,7 @@ section>div{
 }
 
 .slider-container{
-    height: 100%;
+    /* height: 100%; */
     position: relative;
 }
 
@@ -320,10 +326,10 @@ section>div>h3>img{
 }
 
 @media screen and (max-width:767px){
-    .sub_main{
+    /* .grid_container{
     max-width: 450px;
-    }
-    
+    } 
+     */
     .jc_container{
     display: block;
     }
@@ -336,8 +342,28 @@ section>div>h3>img{
         margin-bottom: 20px;
     }
 
+    .btn_wrap button{
+        font-size: 20px;
+    }
+
     .community_preview{
         margin-bottom: 40px;
+    }
+
+    .community_preview_cont{
+        height: 500px;
+    }
+
+    .profile_prev dt{
+        font-size: 16px;
+    }
+
+    .profile_prev dd{
+        font-size: 16px;
+    }
+
+    .filter{
+        top: 18%;
     }
 
     .activity{
@@ -349,6 +375,12 @@ section>div>h3>img{
     }
 
     .schedule{
+        margin-bottom: 40px;
+    }
+
+    .people_box{
+        text-align: center;
+        margin: 0 auto;
         margin-bottom: 40px;
     }
 }
