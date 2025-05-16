@@ -40,12 +40,12 @@ h1{
     color: #222222;
 }
 
-.mobile_header{
+/* .mobile_header{
     display: none;
-}
+} */
 
 @media screen and (max-width: 767px){
-    .mobile_header{
+    /* .mobile_header{
         display: block;
         padding: 20px 0; 
         position: relative;
@@ -98,19 +98,6 @@ h1{
         color: #D0FD5E;
     }
 
-    .mobile_gnb li:hover{
-       
-    }
-
-    /* .sign_wrap{
-        width: 200px;
-        align-items: center;
-        margin: 0 auto;
-        display: flex;
-        gap: 10px;
-        font-size: 20px;
-    } */
-
     .sign_wrap a{
         display: block;
         padding: 20px;
@@ -122,6 +109,54 @@ h1{
 
     .sign_wrap a:hover{
         color: #D0FD5E;
+    } */
+
+    .mobile_header{
+        background: #222222;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        z-index: 200;
     }
-    
+
+    .gnb_mobile{
+        padding: 20px;
+    }
+
+    .gnb_mobile .main_gnb{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .gnb_mobile li{
+        padding: 10px;
+        transition: all 0.3s;
+    }
+
+    .gnb_mobile li:hover{
+        background: #796BD8;
+    }
+
+    .gnb_mobile button{
+        color: #FEFEFE;
+        font-size: 16px;
+    }
+
+    .gnb_mobile a{
+        text-align: center;
+    }
+
+    .gnb_mobile img{
+        display: block;
+        margin: 0 auto;
+    }
+
+    .sub_gnb .none{
+        display: none;
+    }
+
+     .sub_gnb .block{
+        display: block;
+    }
+
 }

@@ -35,7 +35,6 @@ function JoinedCircle01() {
       }
 
     const popupRef = useRef(null);
-  
 
   useEffect(() => {
     const handleClickOutside = (event) => {

@@ -1,17 +1,19 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { Link } from 'react-router-dom';
-import { AuthContext } from "../context/AuthContext";
-import "../Header.css"
-import menuIcon from '../images/menu_icon.svg'
+import { AuthContext } from '../context/AuthContext';
+import '../Header.css';
+import './GnbMobile';
+import menuIcon from '../images/menu_icon.svg';
 import closeIcon from '../images/close_icon.svg';
+import GnbMobile from './GnbMobile';
 
 function Header({ sidemenuToggle }){
     const { user, logout } = useContext(AuthContext);
-    const [ isMobileMenu, setIsMobileMenu ] = useState(false);
+    // const [ isMobileMenu, setIsMobileMenu ] = useState(false);
 
-    const mobileMenuToggle = () => {
-        setIsMobileMenu(!isMobileMenu);
-    }
+    // const mobileMenuToggle = () => {
+    //     setIsMobileMenu(!isMobileMenu);
+    // }
     
     return(
         <header className='header'>
@@ -35,7 +37,9 @@ function Header({ sidemenuToggle }){
                     </div>
                 </div>
                 <div className='mobile_header'>
-                        <button className='hambuger_menu_mobile' onClick={mobileMenuToggle}><img src={isMobileMenu ? closeIcon : menuIcon } alt="menu"/></button>
+                        <GnbMobile/>
+
+                        {/* <button className='hambuger_menu_mobile' onClick={mobileMenuToggle}><img src={isMobileMenu ? closeIcon : menuIcon } alt="menu"/></button>
                         <Link to='/' className='mobile_home'><h1>Circle</h1></Link>
                         <div className={`mobile_gnb ${isMobileMenu ? 'block' : 'none'}`} >
                         <ul>
@@ -50,10 +54,8 @@ function Header({ sidemenuToggle }){
                             <Link to='./Signin' className='sign_in'>Sign in</Link>
                             <Link to='./Signup'>Sign up</Link>
                         </div>
-                        </div>
-                        
-                       
-                    </div>
+                        </div> */}
+                </div>
             </div>
         </header>
     )
