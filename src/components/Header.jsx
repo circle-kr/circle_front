@@ -1,14 +1,16 @@
-import { useContext } from 'react'
+import React from 'react';
+import { useContext, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import '../Header.css';
-import './GnbMobile';
+import useIsMd from '../hooks/useIsMd';
 import menuIcon from '../images/menu_icon.svg';
-import closeIcon from '../images/close_icon.svg';
-import GnbMobile from './GnbMobile';
+import './GnbMobile';
 
 function Header({ sidemenuToggle }){
     const { user, logout } = useContext(AuthContext);
+    const GnbMobile = React.lazy(() => import('./GnbMobile'));
+      const isMd = useIsMd();
     // const [ isMobileMenu, setIsMobileMenu ] = useState(false);
 
     // const mobileMenuToggle = () => {
@@ -37,8 +39,11 @@ function Header({ sidemenuToggle }){
                     </div>
                 </div>
                 <div className='mobile_header'>
-                        <GnbMobile/>
-
+                   { isMd &&
+                    <React.Suspense fallback={<div>Loading...</div>}>
+                        <GnbMobile />
+                    </React.Suspense>
+                    }
                         {/* <button className='hambuger_menu_mobile' onClick={mobileMenuToggle}><img src={isMobileMenu ? closeIcon : menuIcon } alt="menu"/></button>
                         <Link to='/' className='mobile_home'><h1>Circle</h1></Link>
                         <div className={`mobile_gnb ${isMobileMenu ? 'block' : 'none'}`} >

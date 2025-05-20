@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import '../GnbMobile.css';
 import homeIcon from '../images/home_icon.png';
 import joinCircleIcon from '../images/join_circle_icon.png';
 import joinedCircleIcon from '../images/joined_circle_icon.png';

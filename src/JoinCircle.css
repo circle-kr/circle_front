@@ -326,10 +326,10 @@ section>div>h3>img{
 }
 
 @media screen and (max-width:767px){
-    /* .grid_container{
-    max-width: 450px;
-    } 
-     */
+    .sub_main{
+    padding: 40px 40px 120px;
+    box-sizing: border-box;
+}
     .jc_container{
     display: block;
     }
