@@ -45,6 +45,9 @@ h1{
 }
 
 @media screen and (max-width: 767px){
+    .header_cont .hambuger_menu{
+        display: none;
+    }
     /* .mobile_header{
         display: block;
         padding: 20px 0; 

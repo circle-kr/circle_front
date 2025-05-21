@@ -267,9 +267,9 @@
 }
 
 @media screen and (max-width: 767px){
-    .join_circle_main_wrap{
+    /* .join_circle_main_wrap{
         padding-bottom: 40px;
-    }
+    } */
 
     .category_wrap{
         display: block;

@@ -135,6 +135,9 @@
 }
 
 @media screen and (max-width: 767px){
+    .chat_message_wrap{
+        padding-bottom: 200px;
+    }
 
     .chat_message_top{
         padding: 0;

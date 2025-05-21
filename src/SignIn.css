@@ -123,7 +123,6 @@
 }
 
 @media screen and (max-width: 767px){
-
     .sign_in_cont form{
         width: auto;
     }
@@ -133,7 +132,7 @@
     }
 
     .sign_in_cont input{
-        width: 290px;
+        width: 100%;
     }
 
     .sign_in_cont .sign_in_btn{
