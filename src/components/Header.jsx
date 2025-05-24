@@ -1,5 +1,5 @@
 import React from 'react';
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import '../Header.css';
@@ -10,12 +10,7 @@ import './GnbMobile';
 function Header({ sidemenuToggle }){
     const { user, logout } = useContext(AuthContext);
     const GnbMobile = React.lazy(() => import('./GnbMobile'));
-      const isMd = useIsMd();
-    // const [ isMobileMenu, setIsMobileMenu ] = useState(false);
-
-    // const mobileMenuToggle = () => {
-    //     setIsMobileMenu(!isMobileMenu);
-    // }
+    const isMd = useIsMd();
     
     return(
         <header className='header'>
@@ -44,22 +39,6 @@ function Header({ sidemenuToggle }){
                         <GnbMobile />
                     </React.Suspense>
                     }
-                        {/* <button className='hambuger_menu_mobile' onClick={mobileMenuToggle}><img src={isMobileMenu ? closeIcon : menuIcon } alt="menu"/></button>
-                        <Link to='/' className='mobile_home'><h1>Circle</h1></Link>
-                        <div className={`mobile_gnb ${isMobileMenu ? 'block' : 'none'}`} >
-                        <ul>
-                            <li><Link to='./JoinCircle'>· Join circle</Link></li>
-                            <li><Link to='./MakeCircle'>· Make circle</Link></li>
-                            <li><Link to='./JoinedCircle01'>· Joined circle</Link></li>
-                            <li><Link to='./Notification'>· Notification</Link></li>
-                            <li><Link to='./Chat'></Link>· Chat</li>
-                            <li><Link to='./Profile'></Link>· Profile</li>
-                        </ul>
-                        <div className='sign_wrap'>
-                            <Link to='./Signin' className='sign_in'>Sign in</Link>
-                            <Link to='./Signup'>Sign up</Link>
-                        </div>
-                        </div> */}
                 </div>
             </div>
         </header>

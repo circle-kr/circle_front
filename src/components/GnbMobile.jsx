@@ -11,20 +11,21 @@ import makeCircleIcon from '../images/make_circle_icon.png';
 import notificationIcon from '../images/notification_gnb_icon.png';
 import profileIcon from '../images/profile_icon.png';
 function GnbMobile() {
-    const [ isMoreMenu, setIsMoreMenu ] = useState(moreIcon);
-    const moreMenuClick = () => {
-        setIsMoreMenu( isMoreMenu === moreIcon ? lessIcon : moreIcon );
-    }
+    const [ isMoreMenu, setIsMoreMenu ] = useState(false);
+   
+    const moreMenuClick = () => 
+        setIsMoreMenu( prev => !prev );
+    
     return(
         <div className='gnb_mobile'>
             <ul className='main_gnb'>
                 <li><Link to="./"><img src={homeIcon} alt="home" />Home</Link></li>
                 <li><Link to="./JoinCircle"><img src={joinCircleIcon} alt="joinCircle" />Join circle</Link></li>
                 <li><Link to="./JoinedCircle01"><img src={joinedCircleIcon} alt="joinedCircle" />Joined circle</Link></li>
-                <li><button onClick={moreMenuClick}><img src={isMoreMenu} alt="more" />{isMoreMenu === moreIcon ? 'More' : 'Less'}</button></li>
+                <li><button onClick={moreMenuClick}><img src={isMoreMenu ? lessIcon : moreIcon} alt="more" />{isMoreMenu ? 'Less' : 'More'}</button></li>
             </ul>
 
-            <ul className={`sub_gnb ${isMoreMenu === moreIcon ? 'none' : 'block'}`}>
+            <ul className={`sub_gnb ${isMoreMenu ? 'open' : 'closed'}`}>
                 <li className='more_gnb'><Link to="./Chat"><img src={chatIcon} alt="chat" />Chat</Link></li>
                 <li className='more_gnb'><Link to="./MakeCircle"><img src={makeCircleIcon} alt="makeCircle" />Make circle</Link></li>
                 <li className='more_gnb'><Link to="./Notification"><img src={notificationIcon} alt="notification" />Notification</Link></li>

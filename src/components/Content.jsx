@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import axios from 'axios';
 import '../Content.css'
 import { populars } from '../mock/content';
 import CircleCardUi from '../components/CircleCardUi'
@@ -6,12 +7,67 @@ import arrowDownIcon from '../images/arrow_drop_down_icon.svg'
 import arrowRightIcon from '../images/keyboard_arrow_right_icon.svg'
 
 function Content() {
-    
     const [ isSelectedCategory, setIsSelectedCategory ] = useState('music');
+    const [circles, setCircles] = useState([]); // 실제 모임 데이터
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
     const [likedCircles, setLikedCircles] = useState({
         popular: {},
         all: {},
     });
+    const categories = [
+            { name : "music" },
+            { name : "shopping" },
+            { name : "food" },
+            { name : "baking" },
+            { name : "book" },
+            { name : "sport" },
+            { name : "game" },
+            { name : "DIY" },
+            { name : "language" },
+            { name : "media" },
+            { name : "photo" },
+            { name : "animation" },
+            { name : "exhibition" },
+            { name : "casual" }
+        ]
+
+    const [isExpanded, setIsExpanded] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+        window.addEventListener('resize', handleResize);
+    
+        return () => window.removeEventListener('resize', handleResize);
+        }, []);
+    
+        const visibleCategories = isMobile && !isExpanded
+        ? categories.slice(0, 4)
+        : categories;
+    
+        const toggleExpanded = () => setIsExpanded(prev => !prev);
+          
+    // 카테고리 변경 시 API 호출
+    useEffect(() => {
+        const fetchCircles = async () => {
+        setLoading(true);
+        setError(null);
+        try {
+            const res = await axios.get(`/api/circles?category={enum}=${isSelectedCategory}`);
+            setCircles(res.data); // 실제 데이터 저장
+        } catch (err) {
+            console.error(err);
+            setError('데이터를 불러오는 중 오류가 발생했습니다.');
+        } finally {
+            setLoading(false);
+        }
+        };
+
+        fetchCircles();
+    }, [isSelectedCategory]);
 
     const handleFavoriteToggle = (type, circleTitle) => {
         setLikedCircles(prev => ({
@@ -27,41 +83,6 @@ function Content() {
        setIsSelectedCategory(categoryName);
        console.log(categoryName);
     }
-
-    const categories = [
-        { name : "music" },
-        { name : "shopping" },
-        { name : "food" },
-        { name : "baking" },
-        { name : "book" },
-        { name : "sport" },
-        { name : "game" },
-        { name : "DIY" },
-        { name : "language" },
-        { name : "media" },
-        { name : "photo" },
-        { name : "animation" },
-        { name : "exhibition" },
-        { name : "casual" }
-    ]
-
-        const [isExpanded, setIsExpanded] = useState(false);
-        const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-      
-        useEffect(() => {
-            const handleResize = () => {
-              setIsMobile(window.innerWidth <= 768);
-            };
-            window.addEventListener('resize', handleResize);
-        
-            return () => window.removeEventListener('resize', handleResize);
-          }, []);
-        
-          const visibleCategories = isMobile && !isExpanded
-            ? categories.slice(0, 4)
-            : categories;
-        
-          const toggleExpanded = () => setIsExpanded(prev => !prev);
    
     return(
     <main className='main join_circle_main'>

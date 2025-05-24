@@ -64,6 +64,7 @@ function SignUp() {
   }
 
   const onSubmit = async (data) => {
+    console.log(data);
     if (!isNicknameAvailable) {
       alert("닉네임 중복 확인이 필요합니다.");
       return;

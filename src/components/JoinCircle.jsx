@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Slider from "react-slick";
 import '../JoinCircle.css'
 import { profiles, activities, joiner } from '../mock/joinCircle';
@@ -13,6 +14,10 @@ import peopleIcon from '../images/people_icon.svg'
 import Schedule from './Schedule'
 function JoinCircle() {
     const [clickHeart, setClickHeart] = useState(strokeHeartIcon);
+    const [joinInfo, setJoinInfo] = useState([]); 
+    const [user, setUser] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
     const handleHeartClick = () => {
         setClickHeart(clickHeart === strokeHeartIcon ? heartIcon : strokeHeartIcon);
     };
@@ -28,6 +33,30 @@ function JoinCircle() {
           autoplay: true,
           autoplaySpeed: 3000
         };
+
+        useEffect(() => {
+        const fetchData = async () => {
+            setLoading(true);
+            setError(null);
+            try {
+            const [resCircles, resUser] = await Promise.all([
+                axios.get('/api/circles/{circleId}'),
+                axios.get('/api/circles/{circleId}/members'),
+            ]);
+
+            setJoinInfo(resCircles.data);
+            setUser(resUser.data);
+            } catch (err) {
+            setError('데이터를 불러오는 중 오류가 발생했습니다.');
+            console.error(err);
+            } finally {
+            setLoading(false);
+            }
+        };
+
+        fetchData();
+        }, []);
+
         
     return(
     <main className='main sub_main grid_container'>
