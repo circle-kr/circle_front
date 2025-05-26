@@ -50,14 +50,13 @@ function Content() {
     
         const toggleExpanded = () => setIsExpanded(prev => !prev);
           
-    // 카테고리 변경 시 API 호출
     useEffect(() => {
         const fetchCircles = async () => {
         setLoading(true);
         setError(null);
         try {
             const res = await axios.get(`/api/circles?category={enum}=${isSelectedCategory}`);
-            setCircles(res.data); // 실제 데이터 저장
+            setCircles(res.data); 
         } catch (err) {
             console.error(err);
             setError('데이터를 불러오는 중 오류가 발생했습니다.');

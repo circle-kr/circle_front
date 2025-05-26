@@ -65,19 +65,19 @@ function SignUp() {
 
   const onSubmit = async (data) => {
     console.log(data);
-    if (!isNicknameAvailable) {
-      alert("닉네임 중복 확인이 필요합니다.");
-      return;
-    }
+    // if (!isNicknameAvailable) {
+    //   alert("닉네임 중복 확인이 필요합니다.");
+    //   return;
+    // }
 
-    if (!isEmailAvailable) {
-      alert("이메일 중복 확인이 필요합니다.");
-      return;
-    }
+    // if (!isEmailAvailable) {
+    //   alert("이메일 중복 확인이 필요합니다.");
+    //   return;
+    // }
 
     try {
       const response = await axios.post(
-        `https://8d80-210-206-96-219.ngrok-free.app/api/users`,
+        `${process.env.REACT_APP_API_BASE_URL}/api/users`,
         {
           firstName: data.firstName,
           lastName: data.lastName,
@@ -173,13 +173,13 @@ function SignUp() {
                   },
                 })}
                 />
-                <button className='duplicate_btn'
+                {/* <button className='duplicate_btn'
                  type="button"
                  onClick={nicknameCheck}>
                  <img src={checkIcon} alt='닉네임 중복체크' />Duplicate check</button>
                  {isNicknameAvailable === false && (
                   <p className="error">Nickname is already taken.</p>
-                )}
+                )} */}
                </div>
                {errors.nickName && <p className="error">{errors.nickName.message}</p>}
            </div>
@@ -196,14 +196,14 @@ function SignUp() {
                     })}
                     />
                     
-                    <button className='duplicate_btn' 
+                    {/* <button className='duplicate_btn' 
                      type="button" 
                      onClick={emailCheck}>
                       <img src={checkIcon} alt='이메일 중복체크'
                       />Duplicate check</button>
                      {isEmailAvailable === false && (
                       <p className="error">Email is already taken.</p>
-                    )}
+                    )} */}
                </div>
                {errors.email && <p className="error">{errors.email.message}</p>}
            </div>

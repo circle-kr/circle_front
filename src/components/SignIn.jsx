@@ -14,23 +14,28 @@ function SignIn() {
     const onSubmit =  async ({email, password}) => {
       console.log('폼 데이터:', { email, password }); 
       try {
-        const res = await axios.post('/api/login', { email, password }, {
-          withCredentials: true,
-        });
-    
-        const { refreshToken } = res.data;
-        localStorage.setItem('refreshToken', refreshToken);
-        console.log('로그인 성공');
-        Navigate('/'); 
-      } catch (e) {
-        console.error('로그인 실패', e);
-      }
-    };
-
-    function signUpClick(){
-      Navigate('../SignUp')
+        const res = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/login`, 
+          { email, password }, 
+          {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      );  
+      
+      // const { refreshToken } = res.data;
+      // localStorage.setItem('refreshToken', refreshToken);
+     console.log(res.headers['Authorization']);
+      Navigate('/'); 
+    } catch (e) {
+      console.error('로그인 실패', e);
     }
-    
+  };
+
+function signUpClick(){
+  Navigate('../SignUp')
+}
+
     return(
     <main className='main sub_main'>
         <div className='sign_in_wrap'>

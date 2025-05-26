@@ -15,7 +15,8 @@ import Schedule from './Schedule'
 function JoinCircle() {
     const [clickHeart, setClickHeart] = useState(strokeHeartIcon);
     const [joinInfo, setJoinInfo] = useState([]); 
-    const [user, setUser] = useState([]);
+    const [members, setMembers] = useState([]);
+    const [Enrollments, setEnrollments] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const handleHeartClick = () => {
@@ -39,13 +40,15 @@ function JoinCircle() {
             setLoading(true);
             setError(null);
             try {
-            const [resCircles, resUser] = await Promise.all([
+            const [resCircles, resMembers, resEnrollments] = await Promise.all([
                 axios.get('/api/circles/{circleId}'),
                 axios.get('/api/circles/{circleId}/members'),
+                axios.post('/api/circles/{circleId}/enrollments'),
             ]);
 
             setJoinInfo(resCircles.data);
-            setUser(resUser.data);
+            setMembers(resMembers.data);
+            setEnrollments(resEnrollments.data);
             } catch (err) {
             setError('데이터를 불러오는 중 오류가 발생했습니다.');
             console.error(err);
@@ -57,7 +60,6 @@ function JoinCircle() {
         fetchData();
         }, []);
 
-        
     return(
     <main className='main sub_main grid_container'>
         <div className='join_circle_wrap'>
@@ -80,11 +82,13 @@ function JoinCircle() {
                     </section>
                 
                     <div className='btn_wrap'>
-                        <button className='join_btn' onClick={handleJoinBtn}>{joinBtn} <span>→</span></button>
+                        <button 
+                        className='join_btn'
+                        onSubmit={handleJoinBtn}
+                        >{joinBtn} <span>→</span></button>
                         <button className='inquiry_btn'>1:1 inquiry <span>→</span></button>
                     </div>
                 
-
                     <section className='community_preview'>
                         <div className='community_preview_cont'>
                             <h3><img src={communityPreviewIcon} alt='미리보기'/>Community preview</h3>
@@ -115,8 +119,8 @@ function JoinCircle() {
                             <div className='activ_box' key={index}>
                                 <img src={activity.imgSrc} alt="" />
                                 <ul>
-                                <li>{activity.contents}</li>
-                                <li>{activity.time}</li>
+                                    <li>{activity.contents}</li>
+                                    <li>{activity.time}</li>
                                 </ul>
                             </div>
                             ))}
