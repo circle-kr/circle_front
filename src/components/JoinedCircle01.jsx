@@ -83,7 +83,7 @@ function JoinedCircle01() {
 
                 <section className="schedule">
                    <div className="schedule_cont">
-                       <Schedule />
+                       <Schedule editable={false} selectable={false} showPopup={false}/>
                    </div>
                 </section>
 

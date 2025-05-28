@@ -281,10 +281,16 @@ section>div>h3>img{
     grid-row: 3 / 4;
 }
 
-.schedule{
+/* .schedule{
     background: #F9F9F9;
     height: 300px;
     overflow: hidden;
+} */
+
+.schedule_preview{
+    background: #796BD8;
+    height: 300px;
+    border-radius: 30px;
 }
 
 .people{

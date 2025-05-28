@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../ChatMessage.css";
 import { useNavigate } from "react-router-dom";
 import arrowBackIcon from "../images/arrow_back_white.svg";
@@ -10,6 +10,39 @@ function ChatMessage() {
   const navigate = useNavigate();
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]); 
+  const [input, setInput] = useState('');
+  const socketRef = useRef(null);
+
+   useEffect(() => {
+    const socket = new WebSocket('ws://localhost:8081');
+
+    socket.onopen = () => console.log('연결됨');
+    socket.onmessage = e => {
+      console.log('메시지:', e.data);
+      setMessages(prev => [...prev, e.data]); // 메시지 상태에 추가
+    };
+
+    socketRef.current = socket;
+
+    return () => {
+      console.log('소켓 닫는 중...');
+      socket.close();
+    };
+  }, []);
+
+  const submitHandler = e => {
+    e.preventDefault();
+       if (
+      socketRef.current && 
+      socketRef.current.readyState === WebSocket.OPEN &&
+      message.trim() !== ""
+    ) {
+      socketRef.current.send(message);
+      setMessage("");
+    } else {
+      console.log('소켓 연결이 아직 열리지 않았거나 메시지가 비어있습니다.');
+    }
+  };
 
   const chatBackClick = () => {
     navigate(`/Chat`);
@@ -21,14 +54,6 @@ function ChatMessage() {
 
   const handleClick = () => {
     document.getElementById("fileInput").click();
-  };
-
-  const submitHandler = (event) => {
-    event.preventDefault();
-    if (message.trim() !== "") {
-      setMessages([...messages, message]); 
-      setMessage(""); 
-    }
   };
 
   return (

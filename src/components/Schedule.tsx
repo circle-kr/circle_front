@@ -9,7 +9,15 @@ import momentTimezonePlugin from "@fullcalendar/moment-timezone";
 import { EventInput } from "@fullcalendar/core"; 
 import { DateSelectArg } from "@fullcalendar/core";
 
-const Schedule: React.FC = () => {
+  interface ScheduleProps {
+    editable?: boolean;
+    selectable?: boolean;
+    showPopup?: boolean;
+}
+const Schedule: React.FC<ScheduleProps> = ({ editable = true,
+  selectable = true,
+  showPopup = true, 
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [events, setEvents] = useState<EventInput[]>([]);
   const createEventId = () => String(Date.now());
@@ -41,6 +49,7 @@ const Schedule: React.FC = () => {
     console.log("Cliquei no evento de: ", info.event);
   }
  
+
   return (
     
     <div className="schedule_wrap">
@@ -53,27 +62,27 @@ const Schedule: React.FC = () => {
           right: "dayGridMonth,timeGridWeek",
         }}
         initialView="dayGridMonth" 
-        editable={true}
-        selectable={true}
+        editable={editable}
+        selectable={selectable}
         selectMirror={true} 
         dayMaxEvents={true} 
         slotMinTime="09:00:00"
         slotMaxTime="21:00:00"
         events={events}
-        select={handleDateSelect}
-        dateClick={handleAddEvent}
+        select={selectable ? handleDateSelect : undefined}
+        dateClick={selectable && showPopup ? handleAddEvent : undefined}
         eventClick={handleEventClick}
         eventAdd={function(){}} 
         eventChange={function(){}}
         eventRemove={function(){}} 
       />
 
-      {isOpen && (
+      {/* {isOpen && (
             <SchedulePopUp
               isOpen={isOpen}
               onClose={handleModalClose}
             />
-          )}
+          )} */}
         </>
     </div>
   );

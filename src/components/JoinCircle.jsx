@@ -135,8 +135,8 @@ function JoinCircle() {
                     </section>
 
                     <section className='schedule'>
-                        <div className='schedule_cont'>
-                            <Schedule/>
+                        <div className='schedule_preview'>
+                           <img src="" alt="" />미리보기
                         </div>
                     </section>
            
