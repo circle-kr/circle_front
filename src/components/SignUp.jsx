@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import checkIcon from '../images/check_icon.svg';
 import visibilityIcon from '../images/visibility_icon.svg'
-import axiosInstance from '../api/axiosInstance';
 import KakaoSignIn from './KakaoSignIn'
 import NaverSignIn from './NaverSignIn';
 import GoogleSignIn from './GoogleSignIn';
@@ -18,40 +17,52 @@ function SignUp() {
   const navigate = useNavigate();
  
   const nicknameCheck = async () => {
-    const nickname = watch("nickName"); 
+    const nickname = watch("nickName");
     try {
-      const response = await axiosInstance.post("/api/users", { nickname });
+      const response = await axios.get(
+        `https://e820-222-110-102-40.ngrok-free.app/api/users/signup/nickname?nickname=${nickname}`
+      );
 
-      if (response.data.status === 200) {
+      console.log("닉네임:", response.data.data.nickname);
+
+      if (response.status === 200) {
         alert("사용 가능한 닉네임입니다.");
         setIsNicknameAvailable(true);
-      } else if (response.data.status === 400) {
+      } 
+    } catch (error) {
+      if (error.response?.status === 409) {
         alert("사용할 수 없는 닉네임입니다.");
         setFocus("nickName");
         setIsNicknameAvailable(false);
+      } else {
+        console.error("닉네임 중복 확인 중 오류:", error);
+        alert("다죽자.");
       }
-    } catch (error) {
-      console.error("닉네임 중복 확인 중 오류:", error);
     }
-  };
+};
 
   const emailCheck = async () => {
     const email = watch("email"); 
     try {
-      const response = await axiosInstance.post("/api/users", { email });
+      const response = await axios.get(
+        `https://e820-222-110-102-40.ngrok-free.app/api/users/signup/email?email=${email}`
+      );
 
-      if (response.data.status === 200) {
+      if (response.status === 200) {
         alert("사용 가능한 이메일입니다.");
-        setIsEmailAvailable(false);
-      } else if (response.data.status === 400) {
-        alert("사용할 수 없는 이메일입니다.");
-        setFocus("nickName");
         setIsEmailAvailable(true);
       }
     } catch (error) {
-      console.error("이메일일 중복 확인 중 오류:", error);
+      if (error.response?.status === 409) {
+        alert("사용할 수 없는 이메일입니다.");
+        setFocus("email");
+        setIsEmailAvailable(false);
+      } else {
+        console.error("이메일 중복 확인 중 오류:", error);
+        alert("다죽자.");
+      }
     }
-  };
+  }
 
   const pwd = watch("password"); 
 
@@ -64,20 +75,30 @@ function SignUp() {
   }
 
   const onSubmit = async (data) => {
-    console.log(data);
-    // if (!isNicknameAvailable) {
-    //   alert("닉네임 중복 확인이 필요합니다.");
-    //   return;
-    // }
+    if (isNicknameAvailable !== true) {
+      alert("닉네임 중복 확인이 필요합니다.");
+      return;
+    }
 
-    // if (!isEmailAvailable) {
-    //   alert("이메일 중복 확인이 필요합니다.");
-    //   return;
-    // }
+    if (isEmailAvailable !== true) {
+      alert("이메일 중복 확인이 필요합니다.");
+      return;
+    }
+
+    console.log(data);
+    if (!isNicknameAvailable) {
+      alert("닉네임 중복 확인이 필요합니다.");
+      return;
+    }
+
+    if (!isEmailAvailable) {
+      alert("이메일 중복 확인이 필요합니다.");
+      return;
+    }
 
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_BASE_URL}/api/users`,
+        'https://e820-222-110-102-40.ngrok-free.app/api/users/signup',
         {
           firstName: data.firstName,
           lastName: data.lastName,
@@ -173,13 +194,13 @@ function SignUp() {
                   },
                 })}
                 />
-                {/* <button className='duplicate_btn'
+                <button className='duplicate_btn'
                  type="button"
                  onClick={nicknameCheck}>
                  <img src={checkIcon} alt='닉네임 중복체크' />Duplicate check</button>
                  {isNicknameAvailable === false && (
                   <p className="error">Nickname is already taken.</p>
-                )} */}
+                )}
                </div>
                {errors.nickName && <p className="error">{errors.nickName.message}</p>}
            </div>
@@ -196,14 +217,14 @@ function SignUp() {
                     })}
                     />
                     
-                    {/* <button className='duplicate_btn' 
+                    <button className='duplicate_btn' 
                      type="button" 
                      onClick={emailCheck}>
                       <img src={checkIcon} alt='이메일 중복체크'
                       />Duplicate check</button>
                      {isEmailAvailable === false && (
                       <p className="error">Email is already taken.</p>
-                    )} */}
+                    )}
                </div>
                {errors.email && <p className="error">{errors.email.message}</p>}
            </div>
@@ -214,8 +235,8 @@ function SignUp() {
                {...register('password', {
                 required: "password is required",
                 pattern: {
-                  value: /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,12}$/,
-                    message: 'Enter 8-12 characters, including letters, numbers, symbols.'
+                  value: /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,15}$/,
+                    message: 'Enter 8-15 characters, including letters, numbers, symbols.'
                 }
               })}
                />

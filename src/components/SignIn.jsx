@@ -14,7 +14,7 @@ function SignIn() {
     const onSubmit =  async ({email, password}) => {
       console.log('폼 데이터:', { email, password }); 
       try {
-        const res = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/login`, 
+        const res = await axios.post('https://e820-222-110-102-40.ngrok-free.app/api/users/login', 
           { email, password }, 
           {
           headers: {
