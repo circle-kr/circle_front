@@ -41,9 +41,9 @@ function JoinCircle() {
             setError(null);
             try {
             const [resCircles, resMembers, resEnrollments] = await Promise.all([
-                axios.get('/api/circles/{circleId}'),
-                axios.get('/api/circles/{circleId}/members'),
-                axios.post('/api/circles/{circleId}/enrollments'),
+                axios.get('https://fee2-121-170-187-193.ngrok-free.app/api/circles/{circleId}'),
+                axios.get('https://fee2-121-170-187-193.ngrok-free.app/api/circles/{circleId}/members'),
+                axios.post('https://fee2-121-170-187-193.ngrok-free.app/api/circles/{circleId}/enrollments'),
             ]);
 
             setJoinInfo(resCircles.data);

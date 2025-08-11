@@ -31,7 +31,6 @@ function Content() {
             { name : "exhibition" },
             { name : "casual" }
         ]
-
     const [isExpanded, setIsExpanded] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
     
@@ -55,7 +54,7 @@ function Content() {
         setLoading(true);
         setError(null);
         try {
-            const res = await axios.get(`/api/circles?category={enum}=${isSelectedCategory}`);
+            const res = await axios.get(`https://fee2-121-170-187-193.ngrok-free.app/api/circles?category=${isSelectedCategory}`);
             setCircles(res.data); 
         } catch (err) {
             console.error(err);
