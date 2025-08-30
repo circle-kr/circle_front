@@ -1,48 +1,62 @@
 # 🌐 Circle – 외국인 유학생을 위한 커뮤니티 플랫폼
 
 ## 📆 프로젝트 기간
-2024.11 ~ 2025.05
+2024.11 ~ 2025.05 (팀 프로젝트)
 
-### 🔧 개발 중 기능
-- ⭐⭐ 현재 모든 컴포넌트의 UI 구현은 완료된 상태이며, 로그인 및 회원가입 페이지는 백엔드 서버와 연결완료하였습니다.
-- '메인페이지', 'JoinedCircle' 페이지는 mock 데이터를 기반으로 개발되었고, 그 외 컴포넌트는 임시로 수기 데이터를 작성하여 구현하였습니다.
-- 일부 기능은 향후 업데이트를 위해 추후에 개선할 예정입니다.
+## 📝 프로젝트 개요
+외국인 유학생들이 한국 내에서 **언어/문화 장벽을 극복**하고,  
+관심사 기반으로 소모임을 만들고 참여할 수 있는 커뮤니티 플랫폼입니다.  
 
-## 🎯 개발 목표
-- 외국인 친화적인 커뮤니티 웹/앱 개발
-- 프론트엔드 & 백엔드 협업 경험을 통한 실무 감각 향상
+현재 **UI 구현 및 인증 기능(로그인/회원가입) 서버 연동 완료** 상태이며,  
+추후 배포 환경 확장 및 추가 기능 고도화를 계획 중입니다.  
 
-## ⚙️ 개발 환경
-- **Frontend**: HTML5, CSS3, JavaScript, React, TypeScript
-- **Backend**: 협업 중인 개발자 친구가 Node.js, Java, MySQL 환경에서 개발을 진행했습니다.
-- **협업 도구**: GitHub, Notion
+---
 
-## 👥 프로젝트 소개 및 역할 분담
-본 프로젝트는 외국인 유학생들이 한국 내 커뮤니티 환경에 적응하기 어려운 문제를 해결하고자 기획된 웹 기반 커뮤니티 서비스입니다.  
-관심사 기반으로 소모임을 만들고 참여할 수 있는 구조로, 언어와 문화의 장벽을 낮추는 데 중점을 두었습니다.
+## 🛠 기술 스택
+- **Frontend**: React, TypeScript, JavaScript (ES6+), HTML5, CSS3  
+- **Backend**: Node.js, Java, MySQL (협업)  
+- **Library**: Axios, React Hook Form, FullCalendar, react-pro-sidebar  
+- **Collaboration**: GitHub, Notion  
 
-프론트엔드 전반을 담당하여 다음과 같은 업무를 수행하고 있습니다:
-- 사용자 친화적인 UI 구성 및 컴포넌트 구조 설계
-- `axios`를 활용한 REST API 연동
-- 관심사 기반 데이터 흐름 구성
-- TypeScript 및 React Hook 기반 유효성 검사 구조 설계
+---
 
-## 🔗 배포 주소
-- https://circle-kr.github.io/circle_front/
+## 👥 역할 분담
+- 프론트엔드 전반 담당
+  - 사용자 친화적인 UI 구성 및 컴포넌트 설계
+  - Axios 기반 REST API 연동
+  - 관심사 기반 데이터 구조 설계
+  - TypeScript 및 React Hook Form으로 유효성 검사 구현
+- 백엔드(팀원): Node.js, Java, MySQL 환경에서 API/DB 설계  
 
-## 🗂 기획 문서
-- [Notion 기획서 바로가기](https://www.notion.so/13de201be1ac802db3dcd9ea3f821192?pvs=4)  
-
+---
 
 ## 🚀 주요 기능
-- REST API 기반 로그인 / 회원가입 기능
-- 실시간 유효성 검사 (React Hook Form)
-- FullCalendar 기반 스케줄 기능 (UI 구현 완료)
-- Sidebar 토글 기능 구현 (react-pro-sidebar)
+
+| 기능 | 설명 | 목적 |
+|------|------|------|
+| 🔑 로그인/회원가입 | REST API 기반 인증 | 실사용 서비스 기반 구축 |
+| 📝 실시간 유효성 검사 | React Hook Form 활용 | 사용자 입력 오류 최소화 |
+| 📅 일정 관리 | FullCalendar UI 적용 | 소모임 일정 공유 및 관리 |
+| 📂 Sidebar 토글 | react-pro-sidebar 활용 | 직관적인 네비게이션 제공 |
+
+---
+
+## 🔗 배포 주소
+👉 [https://circle-kr.github.io/circle_front/](https://circle-kr.github.io/circle_front/)
+
+## 🗂 기획 문서
+👉 [Notion 기획서](https://www.notion.so/13de201be1ac802db3dcd9ea3f821192?pvs=4)
+
+---
+
+## 🖼 구현 페이지
+![Image](https://github.com/user-attachments/assets/342c4522-f76d-48e8-bea7-dee40caf4632)
+
+---
 
 ## ✍️ 느낀 점
-정식 팀 프로젝트 경험은 처음이었지만, 백엔드와의 협업 과정에서 API 명세를 기반으로 한 데이터 요청, 역할 분배, Git 협업 등의 과정을 직접 체험해보며 많은 인사이트를 얻을 수 있었습니다.  
-실무와 가까운 흐름을 이해할 수 있었고, 다양한 UI 라이브러리와 React 기능을 활용하면서 프론트엔드 개발자로서의 자신감을 키울 수 있는 소중한 경험이었습니다.
+첫 팀 프로젝트였지만, 백엔드와의 협업 과정에서 **API 명세 기반 개발, 역할 분담, Git 협업** 등을 체험하며 실무 흐름을 이해할 수 있었습니다.  
+다양한 UI 라이브러리와 React 기능을 활용하면서 프론트엔드 개발자로서 자신감을 쌓을 수 있는 경험이었습니다.  
 
-## 구현 페이지
-![Image](https://github.com/user-attachments/assets/342c4522-f76d-48e8-bea7-dee40caf4632)
+추후에는 **배포 환경 확장**, **실시간 데이터 처리(채팅, 알림)** 등을 추가하여  
+더 완성도 높은 커뮤니티 플랫폼으로 발전시키고자 합니다.  
