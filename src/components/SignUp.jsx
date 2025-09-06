@@ -36,7 +36,7 @@ function SignUp() {
         setIsNicknameAvailable(false);
       } else {
         console.error("닉네임 중복 확인 중 오류:", error);
-        alert("다죽자.");
+        alert("오류가 발생하였습니다.");
       }
     }
 };
@@ -59,7 +59,7 @@ function SignUp() {
         setIsEmailAvailable(false);
       } else {
         console.error("이메일 중복 확인 중 오류:", error);
-        alert("다죽자.");
+        alert("오류가 발생하였습니다.");
       }
     }
   }
